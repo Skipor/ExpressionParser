@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" name="Default" comment="" />
+    <list default="true" id="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/BinaryOperation.java" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/BinaryOperation.java" />
+    </list>
     <ignored path="Java HW 5.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Main.java" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1369738503848" ignored="false" />
-    <file path="/BinaryOperation.java" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1369676752156" ignored="false" />
+    <file path="/BinaryOperation.java" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1378556279138" ignored="false" />
     <file path="/Plus.java" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1368468391157" ignored="false" />
     <file path="/Minus.java" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1368468425395" ignored="false" />
     <file path="/Times.java" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1368468475241" ignored="false" />
@@ -27,7 +29,7 @@
     <file path="/VariableParser.java" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1369731744951" ignored="false" />
     <file path="/VariablesValues.java" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1369732996470" ignored="false" />
     <file path="/Dummy.txt" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1378555370973" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1378555370654" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1378556059561" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/compiler.xml" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1378555199713" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/modules.xml" changelist="0c0f68a2-d98c-4e19-8c60-ee06e32d0e25" time="1378555200254" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -131,19 +133,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="23" selection-start="232" selection-end="232" vertical-scroll-proportion="0.09689923">
+            <state line="8" column="23" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BinaryOperation.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BinaryOperation.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/BinaryOperation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="55" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
+            <state line="7" column="33" selection-start="259" selection-end="259" vertical-scroll-proportion="0.13565892">
               <folding />
             </state>
           </provider>
@@ -190,7 +192,6 @@
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/Power.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/ParserException.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/FormEvaluationException.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/BinaryOperation.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/FormArgument.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/VariableParser.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/VariablesValues.java" />
@@ -200,6 +201,7 @@
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/Variable.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/Operation.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Main.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/BinaryOperation.java" />
       </list>
     </option>
   </component>
@@ -416,9 +418,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -580,13 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/BinaryOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="55" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/Form.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="35" selection-start="163" selection-end="163" vertical-scroll-proportion="0.13440861">
@@ -610,7 +605,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="23" selection-start="232" selection-end="232" vertical-scroll-proportion="0.09689923">
+        <state line="8" column="23" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddef/Skipor/homeWork5/Form/BinaryOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="33" selection-start="259" selection-end="259" vertical-scroll-proportion="0.13565892">
           <folding />
         </state>
       </provider>
