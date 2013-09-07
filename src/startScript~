@@ -1,0 +1,4 @@
+#!/bin/bash
+javac ru/ifmo/ctddef/Skipor/homeWork5/*.java
+javac ru.ifmo.ctddef.Skipor.homeWork5.Form.*.java
+java ru.ifmo.ctddef.Skipor.homeWork5.Simplifier $@
