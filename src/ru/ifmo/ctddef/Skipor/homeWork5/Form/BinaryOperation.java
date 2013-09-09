@@ -1,28 +1,41 @@
 package ru.ifmo.ctddef.Skipor.homeWork5.Form;
 
-import ru.ifmo.ctddef.Skipor.homeWork5.VariablesValues;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-public class BinaryOperation implements Form {
-    private final Form leftArgument;
-    private final Form rightArgument;
-    private final boolean isLeftAssociativity;
-    private final Operation operation;
+public enum BinaryOperation {
 
-    public BinaryOperation(Form leftArgument, Form rightArgument, Operation operation, boolean leftAssociativity) {
-        this.leftArgument = leftArgument;
-        this.rightArgument = rightArgument;
-        this.operation = operation;
-        this.isLeftAssociativity = leftAssociativity;
+    ENTAILMENT("->", 0, false) {
+    },
+
+    DISJUNCTION("|", 1) {
+    },
+
+    CONJUNCTION("&", 2) {
+    },
+;
+
+
+    public final String token;
+    public final int priority;
+    public final boolean isLeftAssociativity;
+
+
+    private BinaryOperation(String token, int priority, boolean isLeftAssociativity) {
+        this.isLeftAssociativity = isLeftAssociativity;
+        this.token = token;
+        this.priority = priority;
     }
 
-    public BinaryOperation(Form leftArgument, Form rightArgument, Operation operation) {
-        this(leftArgument, rightArgument, operation, true);
+    private BinaryOperation(String token, int priority) {
+        this(token, priority, true);
     }
 
-    public Integer evaluate(VariablesValues arguments) throws FormEvaluationException {
-        return operation.apply(leftArgument.evaluate(arguments), rightArgument.evaluate(arguments));
+    @Override
+    public String toString() {
+        return token;
     }
 
 
 }
-

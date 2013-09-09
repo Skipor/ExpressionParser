@@ -1,100 +1,154 @@
 package ru.ifmo.ctddef.Skipor.homeWork5;
 
-import ru.ifmo.ctddef.Skipor.homeWork5.Form.Form;
-import ru.ifmo.ctddef.Skipor.homeWork5.Form.FormEvaluationException;
+import ru.ifmo.ctddef.Skipor.homeWork5.Form.*;
 
-import java.util.Scanner;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Main {
-    @SuppressWarnings("InfiniteLoopStatement")
-    public static void main(String[] args) throws ParserException, FormEvaluationException {
-//        int[] valuesOfArguments = {10, 20, 30};
-//        final String[] namesOfArguments = {"x", "y", "z"};
-//        final int numberOfArguments = namesOfArguments.length;
-//        Map<String, Integer> arguments = new HashMap<>(numberOfArguments);
-//        for (int i = 0; i < numberOfArguments; ++i) {
-//            arguments.put(namesOfArguments[i], valuesOfArguments[i]);
-//        }
 
-        Scanner scanner = new Scanner(System.in);
-        Form form;
-        while (true) {
-            System.out.print("Enter an expression: ");
+    static String[] systemsOfAxioms = {
+            "F->O->F",
+            "(F->O)->(F->O->P)->(O->P)",
+            "F->O->F&O",
+            "F&O->F",
+            "F&O->O",
+            "F->F|O",
+            "O->F|O",
+            "(F->P)->(O->P)->(F|O->P)",
+            "(F->O)->(F->!O)->!F",
+            "!!F->F"
+    };
+    static Form[] formsOfSystemsOfAxioms = new Form[systemsOfAxioms.length];
+
+    static {
+        for (int i = 0; i < systemsOfAxioms.length; i++) {
             try {
-                String expression = scanner.nextLine();
-                form = FormParser.formParse(expression);
+                formsOfSystemsOfAxioms[i] = FormParser.formParse(systemsOfAxioms[i]);
             } catch (ParserException e) {
-                System.out.println(e.getMessage());
-                System.out.println("Try one more.");
-                continue;
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
-            break;
+        }
+    }
+
+    static boolean isAxiom(Form statement) throws Exception {
+        for (Form axiom : formsOfSystemsOfAxioms) {
+            Map<String, Form> variablesValues = new HashMap<>(5);
+            if (isAxiomPart(axiom, statement, variablesValues)) {
+                return true;
+            }
         }
 
-        while (true) {
-            System.out.print("Enter an variables and their vales: ");
-            VariablesValues values;
-            try {
-                String expression = scanner.nextLine();
-                values = FormParser.variablesParse(expression);
-            } catch (ParserException e) {
-                System.out.println(e.getMessage());
-                System.out.println("Try one more.");
-                continue;
-            }
+        return false;
 
-            try {
-                System.out.println(form.evaluate(values));
-            } catch (FormEvaluationException e) {
-                System.out.println(e.getMessage());
-                System.out.println("Try one more.");
-                continue;
-            }
 
+    }
+
+    static boolean isAxiomPart(Form axiomPart, Form statementPart, Map<String, Form> variableValues) throws Exception {
+        if (axiomPart instanceof Variable) {
+            String variableName = axiomPart.toString();
+            if (variableValues.containsKey(variableName)) {
+                return statementPart.equals(variableValues.get(variableName));
+            } else {
+                variableValues.put(variableName, statementPart);
+                return true;
+            }
         }
+
+        if (axiomPart instanceof UnaryNode) {
+            if (statementPart instanceof UnaryNode) {
+                return (((UnaryNode) axiomPart).operation.equals(((UnaryNode) statementPart).operation)
+                        && isAxiomPart(((UnaryNode) axiomPart).argument, (((UnaryNode) statementPart).argument), variableValues));
+            } else {
+                return false;
+            }
+        }
+
+        if (axiomPart instanceof BinaryNode) {
+            if (statementPart instanceof BinaryNode) {
+                return ((BinaryNode) axiomPart).operation.equals(((BinaryNode) statementPart).operation)
+                        && isAxiomPart(((BinaryNode) axiomPart).leftArgument, ((BinaryNode) statementPart).leftArgument, variableValues)
+                        && isAxiomPart(((BinaryNode) axiomPart).rightArgument, ((BinaryNode) statementPart).rightArgument, variableValues);
+
+            } else {
+                return false;
+            }
+        }
+        throw new Exception("Surprising Form in axiom :))");
+    }
+
+
+
+    public static void main(String[] args) throws Exception {
+
+
+        BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
+        PrintWriter writer = new PrintWriter(new FileWriter("output.txt"));
+        List<Form> statements = new ArrayList<>();
+        int linesReaded = 0;
+        boolean proofIsCorrect = true;
+
+        read:
+        while (reader.ready()) {
+            linesReaded++;
+            String readed = reader.readLine();
+            Form nextStatement = FormParser.formParse(readed);
+
+            for (Form statement : statements) {                       //Modus Ponus
+                if (statement instanceof BinaryNode && ((BinaryNode) statement).operation == BinaryOperation.ENTAILMENT) {
+                    if (nextStatement.equals(((BinaryNode) statement).rightArgument)) {
+                        Form leftTerm = ((BinaryNode) statement).leftArgument;
+                        for (Form context : statements) {
+                            if (context.equals(leftTerm)) {
+                                statements.add(nextStatement);
+
+                                System.out.println("Statment " + Integer.toString(linesReaded) + " Modus Ponus "); /////////
+                                continue read;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            if (isAxiom(nextStatement)) {
+                statements.add(nextStatement);
+            } else {
+                writer.write("Доказательство некорректно начиная с высказывания № " + Integer.toString(linesReaded));
+                proofIsCorrect = false;
+                break;
+            }
+        }
+
+        if (proofIsCorrect) {
+            writer.write("Доказательство корректно.");
+        }
+
 
     }
 
 }
 
 
-////
-////        StringBuilder sb = new StringBuilder();
-////        for(int i = 0; i < args.length; i++) {
-////            sb.append(args[i]);
-////        }
-////        String expression = sb.toString();
-//        String expression = "((((0-10-10)))+(10-4+(x*(x+1)))/1+((z)-y)-(2)+y*y)^6";//  +  y/y + (z+y)/(z+y)";
-////        String expression = "x - x";
-//        Form form = FormParser.formParse(expression);
-//        System.out.println(
-//                form.evaluate(arguments)
-//        );
+//while (reader.ready()) {
 //
-//
-//    }
-
-//
-//StringBuilder builder = new StringBuilder();
-//for (int i = 0; i < args.length; i++) {
-//        builder.append(args[i]);
+//        Form form;
+//while (true) {
+//        System.out.print("Enter an expression: ");
+//try {
+//        String expression = scanner.nextLine();
+//form = FormParser.formParse(expression);
+//} catch (ParserException e) {
+//        System.out.println(e.getMessage());
+//System.out.println("Try one more.");
+//continue;
 //}
-//        String expression = builder.toString();
-//expression = "(((-0-10 - +10))) +(10 - 4 + (x * (x + 1)))/-1 + (((z) - y)) - (-2)^4 + y*y + 0 - 0"; // test
-//Form form = FormParser.formParse(expression);
-//form = form.simplify();
-//System.out.println(form.toString());
-
-            /*
-
-            int[] valuesOfArguments = new int[numberOfArguments];
-            int argumentIndex = 0;
-            for (int i = 0; i < args.length; i++){
-            String[] splitedArgs = args[i].split("\\s");
-            for (int j = 0; j < splitedArgs.length; j++){
-            if(splitedArgs[j].length() > 0){
-            valuesOfArguments[argumentIndex++] =
-            }
-            }
-            }
-            */
+//        break;
+//}
+//
+//        System.out.println(form.toString());
+//}
