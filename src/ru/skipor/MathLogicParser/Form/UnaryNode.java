@@ -1,4 +1,4 @@
-package ru.ifmo.ctddef.Skipor.homeWork5.Form;
+package ru.skipor.MathLogicParser.Form;
 
 public class UnaryNode implements Form {
     public final Form argument;

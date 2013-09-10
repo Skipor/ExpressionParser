@@ -1,12 +1,12 @@
-package ru.ifmo.ctddef.Skipor.homeWork5;
+package ru.skipor.MathLogicParser;
 
-import ru.ifmo.ctddef.Skipor.homeWork5.Form.*;
+import ru.skipor.MathLogicParser.Form.*;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static ru.ifmo.ctddef.Skipor.homeWork5.Form.BinaryOperation.*;
-import static ru.ifmo.ctddef.Skipor.homeWork5.Form.UnaryOperation.*;
+import static ru.skipor.MathLogicParser.Form.BinaryOperation.*;
+import static ru.skipor.MathLogicParser.Form.UnaryOperation.*;
 
 public class FormParser { // tail recursive parser
     private String expression;

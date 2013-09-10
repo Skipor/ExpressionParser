@@ -1,4 +1,4 @@
-package ru.ifmo.ctddef.Skipor.homeWork5.Form;
+package ru.skipor.MathLogicParser.Form;
 
 public class Variable implements Form {
     public final String name;

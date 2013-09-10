@@ -1,6 +1,6 @@
-package ru.ifmo.ctddef.Skipor.homeWork5;
+package ru.skipor.MathLogicParser;
 
-import ru.ifmo.ctddef.Skipor.homeWork5.Form.*;
+import ru.skipor.MathLogicParser.Form.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -83,7 +83,7 @@ public class Main {
                 return false;
             }
         }
-        throw new Exception("Surprising Form in axiom :))");
+        throw new Exception("Surprising ru.skipor.MathLogicParser.Form in axiom :))");
     }
 
 
