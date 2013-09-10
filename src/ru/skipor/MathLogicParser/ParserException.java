@@ -1,4 +1,4 @@
-package ru.ifmo.ctddef.Skipor.homeWork5;
+package ru.skipor.MathLogicParser;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,1 +1,2 @@
-This file was created by IntelliJ IDEA 12.1.4 for binding GitHub repository
+This programm checks Math Logic proofs.
+To run it type "java -jar ExpressionParser.jar" in console, or lunch a ./startScript
