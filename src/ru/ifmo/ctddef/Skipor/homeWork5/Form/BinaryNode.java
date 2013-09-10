@@ -8,7 +8,9 @@ public class BinaryNode implements Form {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        if (leftArgument instanceof BinaryNode && ((BinaryNode) leftArgument).operation.priority < operation.priority) {
+        if ((leftArgument instanceof BinaryNode) && (((BinaryNode) leftArgument).operation.priority < operation.priority
+                || ((BinaryNode) leftArgument).operation.priority == operation.priority
+                && !((BinaryNode) leftArgument).operation.isLeftAssociativity)) {
             builder.append("(");
             builder.append(leftArgument.toString());
             builder.append(")");

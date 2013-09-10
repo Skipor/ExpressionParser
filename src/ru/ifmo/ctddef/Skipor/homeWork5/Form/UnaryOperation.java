@@ -2,7 +2,7 @@ package ru.ifmo.ctddef.Skipor.homeWork5.Form;
 
 public enum UnaryOperation {
 
-    NEGATION("->") {
+    NEGATION("!") {
     },;
 
 

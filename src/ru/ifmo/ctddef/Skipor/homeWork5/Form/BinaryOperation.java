@@ -1,9 +1,5 @@
 package ru.ifmo.ctddef.Skipor.homeWork5.Form;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
 public enum BinaryOperation {
 
     ENTAILMENT("->", 0, false) {

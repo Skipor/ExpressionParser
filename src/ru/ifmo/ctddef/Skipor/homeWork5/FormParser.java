@@ -24,6 +24,8 @@ public class FormParser { // tail recursive parser
         //.??$ empty string, if it is end of expression. "" and ')' are exit tokens
         formPattern = Pattern.compile(tokenRegex);
         variableMatcher = Pattern.compile(variableRegex).matcher("");
+//        formPattern = Pattern.compile("[A-Z]");
+//        variableMatcher = Pattern.compile("[A-Z]").matcher("");
     }
 
     static class IllegalExpressionFormatException extends ParserException {
@@ -90,9 +92,8 @@ public class FormParser { // tail recursive parser
             leftArgument = new BinaryNode(leftArgument, rightArgument, DISJUNCTION);
         }
         return leftArgument;
-
-
     }
+
     private Form conjunctionParse() throws ParserException {
 
         Form leftArgument = identifierParse();
@@ -104,10 +105,6 @@ public class FormParser { // tail recursive parser
             leftArgument = new BinaryNode(leftArgument, rightArgument, CONJUNCTION);
         }
         return leftArgument;
-
-
-
-
     }
 
 

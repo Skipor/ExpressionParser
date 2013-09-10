@@ -2,7 +2,10 @@ package ru.ifmo.ctddef.Skipor.homeWork5;
 
 import ru.ifmo.ctddef.Skipor.homeWork5.Form.*;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +15,7 @@ public class Main {
 
     static String[] systemsOfAxioms = {
             "F->O->F",
-            "(F->O)->(F->O->P)->(O->P)",
+            "(F->O)->(F->O->P)->(F->P)",
             "F->O->F&O",
             "F&O->F",
             "F&O->O",
@@ -22,12 +25,15 @@ public class Main {
             "(F->O)->(F->!O)->!F",
             "!!F->F"
     };
-    static Form[] formsOfSystemsOfAxioms = new Form[systemsOfAxioms.length];
+    static Form[] formsOfSystemsOfAxioms = new Form[10];
 
     static {
         for (int i = 0; i < systemsOfAxioms.length; i++) {
             try {
                 formsOfSystemsOfAxioms[i] = FormParser.formParse(systemsOfAxioms[i]);
+
+//                System.out.println(formsOfSystemsOfAxioms[i].toString());    ////////////////////////////
+
             } catch (ParserException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
@@ -36,7 +42,7 @@ public class Main {
 
     static boolean isAxiom(Form statement) throws Exception {
         for (Form axiom : formsOfSystemsOfAxioms) {
-            Map<String, Form> variablesValues = new HashMap<>(5);
+            Map<String, Form> variablesValues = new HashMap<String, Form>(5);
             if (isAxiomPart(axiom, statement, variablesValues)) {
                 return true;
             }
@@ -81,14 +87,15 @@ public class Main {
     }
 
 
-
     public static void main(String[] args) throws Exception {
 
 
         BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
         PrintWriter writer = new PrintWriter(new FileWriter("output.txt"));
-        List<Form> statements = new ArrayList<>();
+        List<Form> statements = new ArrayList<Form>();
         int linesReaded = 0;
+
+
         boolean proofIsCorrect = true;
 
         read:
@@ -96,6 +103,9 @@ public class Main {
             linesReaded++;
             String readed = reader.readLine();
             Form nextStatement = FormParser.formParse(readed);
+//            System.out.println(nextStatement.toString());
+//            System.out.println(Integer.toString(linesReaded));
+
 
             for (Form statement : statements) {                       //Modus Ponus
                 if (statement instanceof BinaryNode && ((BinaryNode) statement).operation == BinaryOperation.ENTAILMENT) {
@@ -105,7 +115,9 @@ public class Main {
                             if (context.equals(leftTerm)) {
                                 statements.add(nextStatement);
 
-                                System.out.println("Statment " + Integer.toString(linesReaded) + " Modus Ponus "); /////////
+//                                System.out.println("Statment " + Integer.toString(linesReaded) + " Modus Ponus "); ///////// /////////
+
+
                                 continue read;
 
                             }
@@ -128,27 +140,10 @@ public class Main {
             writer.write("Доказательство корректно.");
         }
 
+        writer.close();
+
 
     }
 
 }
 
-
-//while (reader.ready()) {
-//
-//        Form form;
-//while (true) {
-//        System.out.print("Enter an expression: ");
-//try {
-//        String expression = scanner.nextLine();
-//form = FormParser.formParse(expression);
-//} catch (ParserException e) {
-//        System.out.println(e.getMessage());
-//System.out.println("Try one more.");
-//continue;
-//}
-//        break;
-//}
-//
-//        System.out.println(form.toString());
-//}
