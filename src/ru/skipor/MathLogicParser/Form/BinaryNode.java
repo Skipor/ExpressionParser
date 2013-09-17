@@ -32,14 +32,26 @@ public class BinaryNode implements Form {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof BinaryNode) {
-            return (operation.equals(((BinaryNode)obj).operation))
-                    && (leftArgument.equals(((BinaryNode)obj).leftArgument))
-                    && (rightArgument.equals(((BinaryNode)obj).rightArgument));
-        }  else {
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BinaryNode)) return false;
+
+        BinaryNode that = (BinaryNode) o;
+
+        if (leftArgument != null ? !leftArgument.equals(that.leftArgument) : that.leftArgument != null) return false;
+        if (operation != that.operation) return false;
+        if (rightArgument != null ? !rightArgument.equals(that.rightArgument) : that.rightArgument != null)
             return false;
-        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = leftArgument != null ? leftArgument.hashCode() : 0;
+        result = 31 * result + (rightArgument != null ? rightArgument.hashCode() : 0);
+        result = 31 * result + (operation != null ? operation.hashCode() : 0);
+        return result;
     }
 
     public BinaryNode(Form leftArgument, Form rightArgument, BinaryOperation operation) {

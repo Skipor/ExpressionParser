@@ -3,6 +3,7 @@ package ru.skipor.MathLogicParser.Form;
 public enum UnaryOperation {
 
     NEGATION("!") {
+
     },;
 
 

@@ -6,12 +6,23 @@ public class UnaryNode implements Form {
 
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof UnaryNode) {
-            return (operation == ((UnaryNode)obj).operation) && argument.equals(((UnaryNode)obj).argument);
-        } else {
-            return false;
-        }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UnaryNode)) return false;
+
+        UnaryNode unaryNode = (UnaryNode) o;
+
+        if (argument != null ? !argument.equals(unaryNode.argument) : unaryNode.argument != null) return false;
+        if (operation != unaryNode.operation) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = argument != null ? argument.hashCode() : 0;
+        result = 31 * result + (operation != null ? operation.hashCode() : 0);
+        return result;
     }
 
     @Override
