@@ -18,7 +18,7 @@ public class FormParser { // tail recursive parser
 
     static {
 
-        String variableRegex = "[A-Z]",
+        String variableRegex = "[A-z]",
                 operationRegex = "[|&!()] | ->",
                 tokenRegex = "(?x)(" + operationRegex + "|" + variableRegex + " | .??$)";
         //.??$ empty string, if it is end of expression. "" and ')' are exit tokens

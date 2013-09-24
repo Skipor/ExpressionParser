@@ -8,6 +8,11 @@ public class Variable implements Form {
     }
 
     @Override
+    public boolean evaluate(VariableValues values) {
+        return values.getValue(name);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Variable)) return false;

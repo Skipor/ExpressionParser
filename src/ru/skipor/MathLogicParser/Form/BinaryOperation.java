@@ -3,12 +3,24 @@ package ru.skipor.MathLogicParser.Form;
 public enum BinaryOperation {
 
     ENTAILMENT("->", 0, false) {
+        @Override
+        public boolean apply(boolean leftArgument, boolean rightArgument) {
+            return (!leftArgument || rightArgument);
+        }
     },
 
     DISJUNCTION("|", 1) {
+        @Override
+        public boolean apply(boolean leftArgument, boolean rightArgument) {
+            return leftArgument || rightArgument;
+        }
     },
 
     CONJUNCTION("&", 2) {
+        @Override
+        public boolean apply(boolean leftArgument, boolean rightArgument) {
+            return leftArgument && rightArgument;
+        }
     },
 ;
 
@@ -32,6 +44,8 @@ public enum BinaryOperation {
     public String toString() {
         return token;
     }
+
+    abstract public boolean apply(boolean leftArgument, boolean rightArgument);
 
 
 }

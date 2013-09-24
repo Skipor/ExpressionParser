@@ -19,6 +19,11 @@ public class UnaryNode implements Form {
     }
 
     @Override
+    public boolean evaluate(VariableValues values) {
+        return operation.apply(argument.evaluate(values));
+    }
+
+    @Override
     public int hashCode() {
         int result = argument != null ? argument.hashCode() : 0;
         result = 31 * result + (operation != null ? operation.hashCode() : 0);

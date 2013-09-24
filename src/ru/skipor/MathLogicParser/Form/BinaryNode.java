@@ -32,6 +32,11 @@ public class BinaryNode implements Form {
     }
 
     @Override
+    public boolean evaluate(VariableValues values) {
+        return operation.apply(leftArgument.evaluate(values), rightArgument.evaluate(values));
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof BinaryNode)) return false;

@@ -15,17 +15,17 @@ public class AxiomsSystems {
     private AxiomsSystems() {
     }
 
-    static String[] systemsOfAxioms = {
-            "F->O->F",
-            "(F->O)->(F->O->P)->(F->P)",
-            "F->O->F&O",
-            "F&O->F",
-            "F&O->O",
-            "F->F|O",
-            "O->F|O",
-            "(F->P)->(O->P)->(F|O->P)",
-            "(F->O)->(F->!O)->!F",
-            "!!F->F"
+    public static final String[] systemsOfAxioms = {
+            "f->o->f",
+            "(f->o)->(f->o->p)->(f->p)",
+            "f->o->f&o",
+            "f&o->f",
+            "f&o->o",
+            "f->f|o",
+            "o->f|o",
+            "(f->p)->(o->p)->(f|o->p)",
+            "(f->o)->(f->!o)->!f",
+            "!!f->f"
     };
     static Form[] formsOfSystemsOfAxioms = new Form[10];
 

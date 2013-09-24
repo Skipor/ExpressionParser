@@ -15,14 +15,14 @@ import java.util.List;
  */
 public class ProofChecker {
 
-    static int check(Proof proof) throws IllegalStateException{
+    public static int check(Proof proof) throws IllegalStateException{
 
         List<Form> statements = (proof.statementsSystem == null) ? new ArrayList<Form>() : new ArrayList<Form>(proof.statementsSystem);
         int statementsRead = 0;
-        for (Form nextStatement : proof.statements) {
+        next:for (Form nextStatement : proof.statements) {
             statementsRead++;
 
-            next:for (Form statement : statements) {                       //Modus Ponus
+           for (Form statement : statements) {                       //Modus Ponus
                 if (statement instanceof BinaryNode
                         && ((BinaryNode) statement).operation == BinaryOperation.ENTAILMENT
                         && nextStatement.equals(((BinaryNode) statement).rightArgument)) {

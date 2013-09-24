@@ -11,11 +11,17 @@ import java.util.List;
  * Time: 11:20 PM
  */
 public class Proof {
-    public List<Form> statementsSystem;     // can be null
     public List<Form> statements;
+    public List<Form> statementsSystem;     // can be null
 
-    public Proof(List<Form> statementsSystem, List<Form> statements) {
+
+    public Proof( List<Form> statements, List<Form> statementsSystem) {
         this.statementsSystem = statementsSystem;
         this.statements = statements;
     }
+
+    public Proof(List<Form> statements) {
+        this(statements, null);
+    }
+
 }
