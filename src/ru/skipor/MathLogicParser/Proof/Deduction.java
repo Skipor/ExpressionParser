@@ -6,7 +6,7 @@ package ru.skipor.MathLogicParser.Proof;
  * Date: 9/15/13
  * Time: 11:27 PM
  */
-public class DeductionTheorem {
+public class Deduction {
 
 
 

@@ -20,6 +20,7 @@ public class FormInserter {
         if (inputs.length > argumentOrder.length) {
             throw new IllegalArgumentException("Too many inputs. At most " + Integer.toString(argumentOrder.length) + " needed. ");
         }
+        arguments.clear();
         for (int i = 0; i < inputs.length; i++) {
             FormInserter.arguments.put(argumentOrder[i], inputs[i]);
         }
@@ -31,7 +32,12 @@ public class FormInserter {
 
     private static Form insert(Form base) {
         if (base instanceof Variable) {
-            return arguments.get(((Variable) base).name);
+            Form result = arguments.get(((Variable) base).name);
+            if (result != null) {
+                return result;
+            } else {
+                throw new IllegalArgumentException("No form founded for " + ((Variable) base).name);
+            }
         } else if (base instanceof BinaryNode) {
             return new BinaryNode(
                     insert(((BinaryNode) base).leftArgument),

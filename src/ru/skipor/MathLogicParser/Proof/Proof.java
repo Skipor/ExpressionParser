@@ -2,6 +2,7 @@ package ru.skipor.MathLogicParser.Proof;
 
 import ru.skipor.MathLogicParser.Form.Form;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,12 +17,16 @@ public class Proof {
 
 
     public Proof( List<Form> statements, List<Form> statementsSystem) {
-        this.statementsSystem = statementsSystem;
         this.statements = statements;
+        this.statementsSystem = statementsSystem;
     }
 
     public Proof(List<Form> statements) {
         this(statements, null);
     }
 
+    public Proof(Proof proof) {
+        this.statements = new ArrayList<>(proof.statements);
+        this.statementsSystem = new ArrayList<>(proof.statementsSystem);
+    }
 }

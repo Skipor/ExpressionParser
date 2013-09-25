@@ -1,6 +1,7 @@
 package ru.skipor.MathLogicParser.Proof;
 
 import ru.skipor.MathLogicParser.Form.Form;
+import ru.skipor.MathLogicParser.Form.FormInserter;
 import ru.skipor.MathLogicParser.FormParser;
 import ru.skipor.MathLogicParser.ParserException;
 
@@ -27,24 +28,40 @@ public class ProofBank {
     static {
         try (BufferedReader reader = new BufferedReader(new FileReader(NAMED_POOFS_FILE_NAME))) {
             List<Form> statements = new ArrayList<>();
-            String nextStatement = "";
+            String lastStatement = "";
+            String nextStatement;
             while (reader.ready()) {
                 nextStatement = reader.readLine();
                 if (!nextStatement.equals("")) {
                     statements.add(FormParser.formParse(nextStatement));
+                    lastStatement = nextStatement;
                 } else {
-                    proofsByNames.put(nextStatement, new Proof(statements));
+                    proofsByNames.put(lastStatement, new Proof(statements));
                     statements = new ArrayList<>();
                 }
             }
-            proofsByNames.put(nextStatement, new Proof(statements));
+//            System.out.println(lastStatement);
+            proofsByNames.put(lastStatement, new Proof(statements));
 
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (ParserException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
+    }
 
+    public  Proof getProofByName(String name, Form ... arguments) {
+        List<Form> statements = new ArrayList<>();
+        Proof proof = proofsByNames.get(name);
+        if (proof == null) {
+            throw  new IllegalStateException("No proof founded for " + name);
+        }
+        List<Form> initialStatements = proof.statements;
+
+        for (Form statement : initialStatements) {
+            statements.add(FormInserter.insert(statement, arguments));
+        }
+        return new Proof(statements);
     }
 
 
