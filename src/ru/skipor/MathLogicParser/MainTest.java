@@ -5,13 +5,8 @@ import ru.skipor.MathLogicParser.Form.FormInserter;
 import ru.skipor.MathLogicParser.Form.Variable;
 import ru.skipor.MathLogicParser.Proof.Proof;
 import ru.skipor.MathLogicParser.Proof.ProofBank;
-import ru.skipor.MathLogicParser.Proof.ProofChecker;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-
-import static ru.skipor.MathLogicParser.Form.FormInserter.*;
 
 /**
  * User: Vladimir Skipor

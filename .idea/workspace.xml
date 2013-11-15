@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Main.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainChecker.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/DeductionTheorem.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/namedProofs.txt" afterPath="$PROJECT_DIR$/namedProofs.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/FormInserter.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/FormInserter.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofChecker.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainChecker.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainChecker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.txt" afterPath="$PROJECT_DIR$/input.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/namedProofs.txt" afterPath="$PROJECT_DIR$/namedProofs.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output.txt" afterPath="$PROJECT_DIR$/output.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExpressionParser.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380124181018" ignored="false" />
+    <file path="/Dummy.txt" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1384521069716" ignored="false" />
     <file path="/BinaryOperation.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1379994923502" ignored="false" />
     <file path="/Main.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380014843077" ignored="false" />
     <file path="/Operation.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1378732546936" ignored="false" />
@@ -28,16 +27,18 @@
     <file path="/Variable.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1379995640447" ignored="false" />
     <file path="/input.txt" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1379394556313" ignored="false" />
     <file path="/AxiomsSystems.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1379997743209" ignored="false" />
-    <file path="/Proof.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380134036368" ignored="false" />
+    <file path="/Proof.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380395487590" ignored="false" />
     <file path="/DeductionTheorem.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1379275323353" ignored="false" />
     <file path="/ProofBank.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380137901846" ignored="false" />
-    <file path="/namedProofs.txt" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1379400681540" ignored="false" />
+    <file path="/namedProofs.txt" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380139740785" ignored="false" />
     <file path="/ProofChecker.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1379397643946" ignored="false" />
     <file path="/VariableValues.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1379995451739" ignored="false" />
     <file path="/FormInserter.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380133514871" ignored="false" />
     <file path="/Statement.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380002607247" ignored="false" />
     <file path="/MainTes.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380015224787" ignored="false" />
     <file path="/MainTest.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380138143111" ignored="false" />
+    <file path="/Deduction.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380395176681" ignored="false" />
+    <file path="/MainChecker.java" changelist="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" time="1380382190994" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -94,7 +94,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java" line="29" class="ru.skipor.MathLogicParser.Proof.ProofBank" package="ru.skipor.MathLogicParser.Proof">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -111,6 +111,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -120,10 +121,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainChecker.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainChecker.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="12" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
+            <state line="28" column="66" selection-start="909" selection-end="909" vertical-scroll-proportion="0.6764706">
               <folding />
             </state>
           </provider>
@@ -132,66 +133,17 @@
       <file leaf-file-name="MainTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="132" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormInserter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/FormInserter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="100" selection-start="1163" selection-end="1163" vertical-scroll-proportion="0.0">
+            <state line="34" column="132" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BinaryNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/BinaryNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="1220" selection-end="1220" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnaryNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/UnaryNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="55" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="output.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="45" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProofBank.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ProofBank.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="48" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.10677618">
-              <folding>
-                <element signature="e#651#666#0" expanded="true" />
-              </folding>
+            <state line="43" column="48" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -199,7 +151,16 @@
       <file leaf-file-name="namedProofs.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/namedProofs.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="-1.1764706">
+            <state line="11" column="0" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Deduction.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="14" selection-start="0" selection-end="2025" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -238,10 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/UnaryNode.java" />
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/UnaryOperation.java" />
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Variable.java" />
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/namedProofs.txt" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/FormParser.java" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/AxiomsSystems.java" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Form.java" />
@@ -250,10 +207,14 @@
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTes.java" />
         <option value="$PROJECT_DIR$/input.txt" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/FormInserter.java" />
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java" />
-        <option value="$PROJECT_DIR$/namedProofs.txt" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java" />
+        <option value="$PROJECT_DIR$/namedProofs.txt" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofChecker.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainChecker.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java" />
+        <option value="$PROJECT_DIR$/output.txt" />
       </list>
     </option>
   </component>
@@ -303,6 +264,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -400,7 +362,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,7 +396,7 @@
       <recent name="ru.skipor" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainTest">
+  <component name="RunManager" selected="Application.MainChecker">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogicParser.Main" />
       <option name="VM_PARAMETERS" />
@@ -477,6 +438,22 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MainChecker" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogicParser.MainChecker" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ExpressionParser" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -568,14 +545,16 @@
       <patterns />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="Application.MainTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.MainChecker" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.MainTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.MainChecker" />
+        <item index="1" class="java.lang.String" itemvalue="Application.MainTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -635,18 +614,20 @@
       <created>1380008594163</created>
       <updated>1380008594163</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ProofBank is debugged">
+      <created>1380139409363</created>
+      <updated>1380139409363</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="100" width="1240" height="700" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -659,8 +640,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.6708229" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32917705" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="100" width="1240" height="700" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -707,7 +690,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="FormInserter and other added&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProofBank is debugged" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -727,6 +710,7 @@
     <MESSAGE value="Final version. Packages refactored." />
     <MESSAGE value="ProofChecker added&#10;" />
     <MESSAGE value="FormInserter and other added&#10;" />
+    <MESSAGE value="ProofBank is debugged" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -736,49 +720,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="353" column="0" selection-start="12892" selection-end="12892" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#12958#13683#0" expanded="true" />
-            <element signature="e#13664#13665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Launcher.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="3077" selection-end="3077" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="356" column="0" selection-start="13549" selection-end="13549" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="0" selection-start="6287" selection-end="6287" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="189" column="0" selection-start="6287" selection-end="6287" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/src.zip!/java/io/BufferedWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="263" column="0" selection-start="7960" selection-end="7960" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="263" column="0" selection-start="7960" selection-end="7960" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/BinaryNode.java">
@@ -790,9 +739,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/input.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="12" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/UnaryNode.java">
@@ -809,20 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="12" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/namedProofs.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="-1.1764706">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/ParserException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="13" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
@@ -832,26 +765,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/output.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="45" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0">
+        <state line="0" column="56" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/AxiomsSystems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="391" selection-end="391" vertical-scroll-proportion="0.12658228">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="88" selection-start="1598" selection-end="1598" vertical-scroll-proportion="1.4784395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="14" selection-start="0" selection-end="2025" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/namedProofs.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="48" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/FormParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="284" selection-end="284" vertical-scroll-proportion="0.11764706">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="132" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="34" column="132" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="48" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.10677618">
-          <folding>
-            <element signature="e#651#666#0" expanded="true" />
-          </folding>
+        <state line="28" column="66" selection-start="909" selection-end="909" vertical-scroll-proportion="0.6764706">
+          <folding />
         </state>
       </provider>
     </entry>

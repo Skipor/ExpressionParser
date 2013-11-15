@@ -2,7 +2,6 @@ package ru.skipor.MathLogicParser;
 
 import ru.skipor.MathLogicParser.Form.Form;
 import ru.skipor.MathLogicParser.Proof.Proof;
-import ru.skipor.MathLogicParser.Proof.ProofChecker;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class MainChecker {
 //            System.out.println(Integer.toString(linesReaded));
             }
 
-            int incorrectStatement = ProofChecker.check(new Proof(statements));
+            int incorrectStatement = new Proof(statements).check();
 
             if (incorrectStatement != 0) {
                 writer.write("Доказательство некорректно начиная с высказывания № " + Integer.toString(incorrectStatement));
