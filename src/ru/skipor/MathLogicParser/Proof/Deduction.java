@@ -1,68 +1,94 @@
-//package ru.skipor.MathLogicParser.Proof;
-//
-//import ru.skipor.MathLogicParser.Form.Form;
-//
-//import java.util.ArrayList;
-//import java.util.HashSet;
-//import java.util.List;
-//import java.util.Set;
-//
-///**
-// * User: Vladimir Skipor
-// * Email: vladimirskipor@gmail.com
-// * Date: 9/15/13
-// * Time: 11:27 PM
-// */
-//public class Deduction {
-//    private List<Form> statementsSystem;
-//    private List<Form> statements;
-//    private static ProofBank proofBank = new ProofBank();
-//
-//    public Deduction(Proof proof) {
-//        this.statementsSystem = proof.statementsSystem;
-//        this.statements = proof.statements;
-//    }
-//
-//
-//
-//    public void apply() {
-//        if (!ready()) {
-//
-//            final int alphaIndex = statementsSystem.size() - 1;
-//            Form alpha = statementsSystem.get(alphaIndex);
-//            statementsSystem.remove(alphaIndex);
-//            Set<Form> statementsSystemSet = new HashSet<>(statementsSystem);
-//            List<Form> futureStatements = new ArrayList<>(statementsSystem);
-//            for (Form curentStatement : statements) {
-//                if (statementsSystemSet.contains(curentStatement)) {
-//                    continue;
-//                } else if (AxiomsSystems.isAxiom(curentStatement)) {
-//                    futureStatements.add(curentStatement);
-//                } else if (curentStatement.equals(alpha)) {
-//                    futureStatements.addAll(proofBank.getProofByName("f->f", alpha).statements);
-//                } else if (Proof.isModusPonensOf(curentStatement,futureStatements))
-//            }
-//
-//
-//
-//
-//        }
-//
-//        }
-//
-//    public  boolean ready() {
-//        return (statementsSystem == null || statementsSystem.isEmpty());
-//    }
-//
-//
-//    public Proof getProof() {
-//        return new Proof(statements,statementsSystem);
-//    }
-//
-//    public Proof getFinal() {
-//        while (!ready()) {
-//            apply();
-//        }
-//        return new Proof(statements, statementsSystem);
-//    }
-//}
+package ru.skipor.MathLogicParser.Proof;
+
+import ru.skipor.MathLogicParser.Form.BinaryNode;
+import ru.skipor.MathLogicParser.Form.BinaryOperation;
+import ru.skipor.MathLogicParser.Form.Form;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * User: Vladimir Skipor
+ * Email: vladimirskipor@gmail.com
+ * Date: 9/15/13
+ * Time: 11:27 PM
+ */
+public class Deduction {
+    private List<Form> assumptions;
+    private List<Form> statements;
+    private static ProofBank proofBank = new ProofBank();
+
+    public Deduction(Proof proof) {
+        assert (proof.check() == 0); // todo: remove
+        this.assumptions = proof.assumptions;
+        this.statements = proof.statements;
+    }
+
+
+    public boolean apply() {
+        System.out.println("apply outer");
+        if (!ready()) {
+            System.out.println("apply inner");
+
+            final int alphaIndex = assumptions.size() - 1;
+            Form alpha = assumptions.get(alphaIndex);
+
+            Set<Form> assumptionSet = new HashSet<>(assumptions);
+            assumptionSet.remove(alpha);
+            List<Form> futureStatements = new ArrayList<>();
+            for (Form currentStatement : statements) {
+                if (assumptionSet.contains(currentStatement) || AxiomsSystems.isAxiom(currentStatement)) {
+                    futureStatements.addAll(proofBank.getProofByName("o->f", currentStatement, alpha).statements);
+                } else if (currentStatement.equals(alpha)) {
+                    futureStatements.addAll(proofBank.getProofByName("f->f", alpha).statements);
+                } else {
+                    Form antecedent = Proof.getModusPonensAntecedent(currentStatement,
+                            statements);
+                    if (antecedent != null) {
+
+                        futureStatements.addAll(proofBank.getProofByName("f->p", alpha, antecedent, currentStatement).statements);
+                    } else {
+                        System.out.println(statements.indexOf(currentStatement));
+                        for (Form st : futureStatements) {
+                            System.out.println(st);
+                        }
+
+                        throw new IllegalStateException(currentStatement.toString());
+
+//                        return false;
+                    }
+
+
+                }
+            }
+            assumptions.remove(alphaIndex);
+            statements = futureStatements;
+
+
+            assert (getProof().check() == 0); // todo: remove
+            return true;
+
+
+        }
+        return false;
+
+    }
+
+    public boolean ready() {
+        return (assumptions == null || assumptions.isEmpty());
+    }
+
+
+    public Proof getProof() {
+        return new Proof(statements, assumptions);
+    }
+
+    public Proof getFinal() {
+        while (apply()) {
+
+        }
+        return new Proof(statements, assumptions);
+    }
+}

@@ -23,7 +23,7 @@ import java.util.Map;
 public class ProofBank {
     private static Map<String, Proof> proofsByNames = new HashMap<String, Proof>();
     private static Map<Form, Proof> proofsByForms = new HashMap<Form, Proof>();
-    public static final String NAMED_POOFS_FILE_NAME = "namedProofs.txt";
+    public static final String NAMED_POOFS_FILE_NAME = "resourceProofs/namedProofs.txt";
 
     static {
         try (BufferedReader reader = new BufferedReader(new FileReader(NAMED_POOFS_FILE_NAME))) {

@@ -7,27 +7,15 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainChecker {
+public class MainTask1 {
 
 
     public static void main(String[] args) throws Exception {
-
         try(
-                BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
                 BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))
         ) {
 
-            List<Form> statements = new ArrayList<Form>();
-
-            while (reader.ready()) {
-                String readed = reader.readLine();
-                statements.add(FormParser.formParse(readed));
-//            System.out.println(nextStatement.toString());
-//            System.out.println(Integer.toString(linesReaded));
-            }
-
-            int incorrectStatement = new Proof(statements).check();
-
+            int incorrectStatement = Proof.checkFile("input.txt");
             if (incorrectStatement != 0) {
                 writer.write("Доказательство некорректно начиная с высказывания № " + Integer.toString(incorrectStatement));
             } else {

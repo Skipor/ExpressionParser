@@ -3,6 +3,7 @@ package ru.skipor.MathLogicParser;
 import ru.skipor.MathLogicParser.Form.Form;
 import ru.skipor.MathLogicParser.Form.FormInserter;
 import ru.skipor.MathLogicParser.Form.Variable;
+import ru.skipor.MathLogicParser.Proof.Deduction;
 import ru.skipor.MathLogicParser.Proof.Proof;
 import ru.skipor.MathLogicParser.Proof.ProofBank;
 
@@ -20,26 +21,13 @@ public class MainTest {
 
 
         public static void main(String[] args) throws Exception {
+            int incorrectStatement = Proof.checkFile("input.txt");
+            System.out.println(incorrectStatement);
+            Deduction deduction = new Deduction(new Proof("testProofs/correctDeduction0.txt"));
 
-            try(
-                    BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
-                    BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))
-            ) {
-
-                String base = "f->o->f&p|p";
-                Form baseForm = FormParser.formParse(base);
-                Form firstForm = FormParser.formParse(reader.readLine());
-                Form secondForm = FormParser.formParse(reader.readLine());
-                Form thirdForm = FormParser.formParse(reader.readLine());
-//                writer.write(FormInserter.insert(baseForm, firstForm, secondForm, thirdForm).toString());
-                writer.write(FormInserter.insert(baseForm, new Variable("B"), new Variable("C"), new Variable("D")).toString() + "\n");
-
-                Proof testProof = new ProofBank().getProofByName("f->f", firstForm);
-                for (Form form : testProof.statements) {
-                    writer.write(form.toString() + '\n');
-
-                }
-
+            Proof proof = deduction.getFinal();
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("testProofs/correct1.txt"))) {
+                writer.write(proof.toString());
 
 
             }
