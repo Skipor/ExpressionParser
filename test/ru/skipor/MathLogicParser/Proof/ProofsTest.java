@@ -19,6 +19,14 @@ public class ProofsTest {
 
     }
     @Test
+    public void testCheckFile1() throws Exception {
+
+
+        assertEquals(0,Proof.checkFile("testProofs/correct1.txt"));
+
+
+    }
+    @Test
             public void testCheckIncorrect() throws Exception {
         assertEquals(Proof.checkFile("testProofs/incorrect8831.txt"), 8831);
     }

@@ -26,6 +26,7 @@ public class MainTest {
             Deduction deduction = new Deduction(new Proof("testProofs/correctDeduction0.txt"));
 
             Proof proof = deduction.getFinal();
+            assert (proof.check() == 0);
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("testProofs/correct1.txt"))) {
                 writer.write(proof.toString());
 

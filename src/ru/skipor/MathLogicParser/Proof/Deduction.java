@@ -28,7 +28,7 @@ public class Deduction {
 
 
     public boolean apply() {
-        System.out.println("apply outer");
+        System.out.println("apply outer"); //todo
         if (!ready()) {
             System.out.println("apply inner");
 
@@ -65,6 +65,8 @@ public class Deduction {
             }
             assumptions.remove(alphaIndex);
             statements = futureStatements;
+
+
 
 
             assert (getProof().check() == 0); // todo: remove

@@ -14,6 +14,7 @@ public class FormParser { // tail recursive parser
     private Matcher formMatcher;
     private static Matcher variableMatcher;
     private static Pattern formPattern;
+    private final Variable.VariableSet variableSet;
 
 
     static {
@@ -59,6 +60,7 @@ public class FormParser { // tail recursive parser
     private FormParser(String expression) {
         this.expression = expression;
         formMatcher = formPattern.matcher(expression);
+        variableSet = new Variable.VariableSet();
     }
 
     private boolean tokenIsVariable() {
@@ -113,7 +115,7 @@ public class FormParser { // tail recursive parser
         nextToken();
         Form result;
         if (tokenIsVariable()) {
-            result = new Variable(currentToken);
+            result = variableSet.getVariable(currentToken);
             nextToken();
         } else if (currentToken.equals("(")) {
             result = entailmentParse();

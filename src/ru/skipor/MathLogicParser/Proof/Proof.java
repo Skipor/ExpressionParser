@@ -107,11 +107,14 @@ public class Proof {
                     || assumptionsSet.contains(nextStatement)) {
                 futureStatements.add(nextStatement);
             } else {
+                System.out.println("standart fail "+  statementsRead);
                 return statementsRead;
+
             }
         }
 
         if (proving != null && !statements.get(statements.size() - 1).equals(proving)) {
+            System.out.println("proving fail "+  statementsRead); // todo
             return statementsRead + 1;
         }
 
