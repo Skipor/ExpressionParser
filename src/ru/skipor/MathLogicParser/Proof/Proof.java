@@ -47,7 +47,7 @@ public class Proof {
         statements = new ArrayList<>();
         assumptions = null;
         try (
-                BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                BufferedReader reader = new BufferedReader(new FileReader(fileName))
         ) {
 
 
@@ -107,14 +107,14 @@ public class Proof {
                     || assumptionsSet.contains(nextStatement)) {
                 futureStatements.add(nextStatement);
             } else {
-                System.out.println("standart fail "+  statementsRead);
+                System.out.println("standart fail " + (statementsRead + 1));
                 return statementsRead;
 
             }
         }
 
         if (proving != null && !statements.get(statements.size() - 1).equals(proving)) {
-            System.out.println("proving fail "+  statementsRead); // todo
+            System.out.println("proving fail " + statementsRead); // todo
             return statementsRead + 1;
         }
 
@@ -183,22 +183,27 @@ public class Proof {
 
     }
 
-    public static Form getModusPonensAntecedent(Form consequent, List<Form> statements) {
+    public static Form getModusPonensConditionalStatement(Form consequent, List<Form> statements) {
 
-        for (ListIterator<Form> iteratorAntecedent = statements.listIterator(); iteratorAntecedent.hasNext(); ) {
-            Form antecedent = iteratorAntecedent.next();
+        for (Form antecedent : statements) {
+            if (antecedent.equals(consequent)) {
+                return null;
+
+            }
             if (antecedent instanceof BinaryNode
                     && ((BinaryNode) antecedent).operation == BinaryOperation.ENTAILMENT
                     && consequent.equals(((BinaryNode) antecedent).rightArgument)) {
                 Form conditionalStatement = ((BinaryNode) antecedent).leftArgument;
-                for (ListIterator<Form> iteratorContext = statements.listIterator(); iteratorContext.hasNext(); ) {
-                    final Form context = iteratorContext.next();
+                for (final Form context : statements) {
+                    if (context.equals(consequent)) {
+                        break;
+                    }
                     if (context.equals(conditionalStatement)) {
 
 //                                System.out.println("Statment " + Integer.toString(linesReaded) + " Modus Ponus "); ///////// /////////
 
 
-                        return antecedent;
+                        return conditionalStatement;
 
                     }
                 }

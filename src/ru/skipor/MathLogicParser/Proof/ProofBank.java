@@ -6,7 +6,6 @@ import ru.skipor.MathLogicParser.FormParser;
 import ru.skipor.MathLogicParser.ParserException;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,12 +20,11 @@ import java.util.Map;
  * Time: 12:04 AM
  */
 public class ProofBank {
-    private static Map<String, Proof> proofsByNames = new HashMap<String, Proof>();
-    private static Map<Form, Proof> proofsByForms = new HashMap<Form, Proof>();
-    public static final String NAMED_POOFS_FILE_NAME = "resourceProofs/namedProofs.txt";
+    private static Map<String, Proof> proofsByNames = new HashMap<>();
+    public static final String NAMED_PROOFS_FILE_NAME = "resourceProofs/namedProofs.txt";
 
     static {
-        try (BufferedReader reader = new BufferedReader(new FileReader(NAMED_POOFS_FILE_NAME))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(NAMED_PROOFS_FILE_NAME))) {
             List<Form> statements = new ArrayList<>();
             String lastStatement = "";
             String nextStatement;

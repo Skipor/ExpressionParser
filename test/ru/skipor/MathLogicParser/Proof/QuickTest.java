@@ -1,14 +1,12 @@
 package ru.skipor.MathLogicParser.Proof;
 
 import org.junit.Test;
-import org.junit.*;
 import ru.skipor.MathLogicParser.Form.Form;
 import ru.skipor.MathLogicParser.Form.FormInserter;
 import ru.skipor.MathLogicParser.Form.Variable;
 import ru.skipor.MathLogicParser.FormParser;
-import ru.skipor.MathLogicParser.ParserException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * User: Vladimir Skipor
@@ -27,7 +25,6 @@ public class QuickTest {
         assertEquals(insertedForm, FormParser.formParse("B->C->B&D|D"));
 
 
-
     }
 
     @Test
@@ -35,6 +32,11 @@ public class QuickTest {
         Proof testProof = new ProofBank().getProofByName("f->f", new Variable("X"));
         assertEquals(testProof.check(), 0);
         assertEquals(testProof.statements.get(testProof.statements.size() - 1), FormParser.formParse("X->X"));
+    }
+
+    @Test
+    public void isAxiom() throws Exception {
+        assertEquals(true, AxiomsSystems.isAxiom(FormParser.formParse("(A->A|!A)->(!(A|!A)->(A->A|!A))")));
     }
 
 

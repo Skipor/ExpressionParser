@@ -1,7 +1,5 @@
 package ru.skipor.MathLogicParser.Proof;
 
-import ru.skipor.MathLogicParser.Form.BinaryNode;
-import ru.skipor.MathLogicParser.Form.BinaryOperation;
 import ru.skipor.MathLogicParser.Form.Form;
 
 import java.util.ArrayList;
@@ -44,7 +42,7 @@ public class Deduction {
                 } else if (currentStatement.equals(alpha)) {
                     futureStatements.addAll(proofBank.getProofByName("f->f", alpha).statements);
                 } else {
-                    Form antecedent = Proof.getModusPonensAntecedent(currentStatement,
+                    Form antecedent = Proof.getModusPonensConditionalStatement(currentStatement,
                             statements);
                     if (antecedent != null) {
 
@@ -88,7 +86,8 @@ public class Deduction {
     }
 
     public Proof getFinal() {
-        while (apply()) {
+        while (true) {
+            if (!(apply())) break;
 
         }
         return new Proof(statements, assumptions);
