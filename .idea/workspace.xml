@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" name="Default" comment="bugs in task 2 fixed">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testProofs/correctDeduction00.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testProofs/dedTestOut.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/QuickTest.java" afterPath="$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/QuickTest.java" />
+    <list default="true" id="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Checker/CounterexampleGenerator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ru/skipor/MathLogic/Form/Checker/CounterexampleGeneratorTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/Gen.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/ProofGenerator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resourceProofs/binaryCustomNamedProofs.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resourceProofs/cp.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resourceProofs/cpded.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resourceProofs/unaryCustomNamedProofs.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resourceProofs/work" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/ParserException.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/BinaryNode.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/BinaryNode.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/BinaryOperation.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/BinaryOperation.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/BinaryOperation.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/BinaryOperation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Const.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Const.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Division.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Division.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Form.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Form.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Form.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Form.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/FormInserter.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/FormHelper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Minus.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Minus.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Mod.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Mod.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Plus.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Plus.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Power.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Power.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Times.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Times.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/UnaryNode.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/UnaryNode.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/UnaryOperation.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/UnaryOperation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Variable.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Variable.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Variable.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Variable.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/VariableValues.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/VariableValues.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/FormParser.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/FormParser.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/FormParser.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Parser/FormParser.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Main.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Main.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTask1.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTask1.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/AxiomsSystems.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/AxiomsSystems.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/Deduction.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/MainTask2.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTask2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/Proof.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/ProofBank.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Statement.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/Statement.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Simplifier.class" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Simplifier.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/DeductionTest.java" afterPath="$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/DeductionTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/ProofsTest.java" afterPath="$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/ProofsTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/QuickTest.java" afterPath="$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/QuickTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resourceProofs/namedProofs.txt" afterPath="$PROJECT_DIR$/resourceProofs/namedProofs.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExpressionParser.iws" />
@@ -21,8 +59,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="Commander">
-    <leftPanel url="file://$PROJECT_DIR$" />
-    <rightPanel />
+    <leftPanel url="file://$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof" />
+    <rightPanel url="file://$PROJECT_DIR$/src/ru/skipor/MathLogic" />
     <splitter proportion="0.5" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -95,103 +133,107 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AxiomsSystems.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/AxiomsSystems.java">
+      <file leaf-file-name="fOrNotf.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resourceProofs/fOrNotf.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1320">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2355">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Deduction.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java">
+      <file leaf-file-name="namedProofs.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resourceProofs/namedProofs.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70472443" vertical-offset="872" max-vertical-offset="1380">
-              <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="659" max-vertical-offset="3405">
+              <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Proof.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/Proof.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.26888603" vertical-offset="660" max-vertical-offset="4365">
+              <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+              <folding>
+                <element signature="e#1618#1619#0" expanded="true" />
+                <element signature="e#1656#1657#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Parser/FormParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="2280">
+              <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/FormHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1155">
+              <caret line="36" column="4" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unaryCustomNamedProofs.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resourceProofs/unaryCustomNamedProofs.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.8181818" vertical-offset="0" max-vertical-offset="315">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="binaryCustomNamedProofs.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resourceProofs/binaryCustomNamedProofs.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.290909" vertical-offset="1809" max-vertical-offset="2535">
+              <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CounterexampleGenerator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Checker/CounterexampleGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2340">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+              <folding>
+                <element signature="e#2647#2648#0" expanded="true" />
+                <element signature="e#2714#2715#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BinaryOperation.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/BinaryOperation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MainTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java">
+        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="990">
-              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuickTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/QuickTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
-              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProofBank.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="930">
-              <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Proof.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2696" max-vertical-offset="3255">
-              <caret line="196" column="16" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="correctDeduction0.txt.out" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testProofs/correctDeduction0.txt.out">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14822.4" vertical-offset="27045" max-vertical-offset="397695">
-              <caret line="26507" column="13" selection-start-line="26507" selection-start-column="13" selection-end-line="26507" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="correct1.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testProofs/correct1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.5" vertical-offset="395775" max-vertical-offset="397680">
-              <caret line="26424" column="36" selection-start-line="26424" selection-start-column="36" selection-end-line="26424" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="correctDeduction0.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testProofs/correctDeduction0.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.6" vertical-offset="0" max-vertical-offset="132615">
-              <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="correctDeduction00.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testProofs/correctDeduction00.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-              <caret line="0" column="48" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="1590">
+              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -221,13 +263,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/AxiomsSystems.java" />
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Statement.java" />
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Main.java" />
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTes.java" />
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/FormInserter.java" />
-        <option value="$PROJECT_DIR$/namedProofs.txt" />
-        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofChecker.java" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/output.txt" />
         <option value="$PROJECT_DIR$/input.txt" />
@@ -239,7 +274,6 @@
         <option value="$PROJECT_DIR$/testProofs/correct0.txt" />
         <option value="$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/DeductionTest.java" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/MainTask2.java" />
-        <option value="$PROJECT_DIR$/resourceProofs/namedProofs.txt" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Form.java" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Variable.java" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/FormParser.java" />
@@ -251,6 +285,35 @@
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java" />
         <option value="$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/MainTask1.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTask1.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Variable.java" />
+        <option value="$PROJECT_DIR$/test/ru/skipor/MathLogic/Form/Checker/CounterexampleGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/Deduction.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/ProofBank.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/Gen.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/AxiomsSystems.java" />
+        <option value="$PROJECT_DIR$/resourceProofs/cp.out.txt" />
+        <option value="$PROJECT_DIR$/resourceProofs/cp.txt" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/BinaryNode.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/UnaryNode.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Form.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/FormInserter.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/FormHelper.java" />
+        <option value="$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/ProofGenerator.java" />
+        <option value="$PROJECT_DIR$/resourceProofs/cpded.txt" />
+        <option value="$PROJECT_DIR$/resourceProofs/namedProofs.txt" />
+        <option value="$PROJECT_DIR$/resourceProofs/customNamedProofs" />
+        <option value="$PROJECT_DIR$/resourceProofs/work.out" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTest.java" />
+        <option value="$PROJECT_DIR$/resourceProofs/work" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Parser/FormParser.java" />
+        <option value="$PROJECT_DIR$/resourceProofs/unaryCastomNamedProofs" />
+        <option value="$PROJECT_DIR$/resourceProofs/binaryCastomNamedProofs" />
+        <option value="$PROJECT_DIR$/resourceProofs/binaryCustomNamedProofs.txt" />
+        <option value="$PROJECT_DIR$/resourceProofs/unaryCustomNamedProofs.txt" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Checker/CounterexampleGenerator.java" />
+        <option value="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/Proof.java" />
       </list>
     </option>
   </component>
@@ -300,8 +363,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -348,7 +409,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpressionParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpressionParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MathLogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpressionParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpressionParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MathLogic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -369,22 +470,12 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ExpressionParser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpressionParser" />
+              <option name="myItemId" value="MathLogic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MathLogicParser" />
+              <option name="myItemId" value="Form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -402,11 +493,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MathLogicParser" />
+              <option name="myItemId" value="MathLogic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Proof" />
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpressionParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpressionParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MathLogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -426,6 +547,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -456,12 +579,14 @@
     <property name="extract.method.default.visibility" value="public" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/ru/skipor/MathLogic" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.skipor.MathLogic.Form.Checker" />
       <recent name="ru.skipor.MathLogicParser.Proof" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -471,10 +596,15 @@
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="ru.skipor.MathLogicParser.Proof.Proof" />
     </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="ru.skipor.MathLogic.Form.Form" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.skipor.MathLogic.Form.Parser" />
+      <recent name="ru.skipor.MathLogic.Tasks" />
+      <recent name="ru.skipor.MathLogicParser" />
       <recent name="ru.skipor.MathLogicParser.Proof" />
       <recent name="" />
-      <recent name="ru.skipor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/testProoffs" />
@@ -484,24 +614,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.mainTest">
-    <configuration default="false" name="MainChecker" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogicParser.MainTask1" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ExpressionParser" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="MainTask2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogicParser.Proof.MainTask2" />
+      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogic.Tasks.MainTask2" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PROGRAM_PARAMETERS" value="testProofs/correctDeduction0.txt" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -520,8 +634,8 @@
       <module name="ExpressionParser" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="ru.skipor.MathLogicParser.Proof" />
-      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogicParser.Proof.ProofsTest" />
+      <option name="PACKAGE_NAME" value="ru.skipor.MathLogic.Proof" />
+      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogic.Proof.ProofsTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -542,8 +656,8 @@
       <module name="ExpressionParser" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="ru.skipor.MathLogicParser.Proof" />
-      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogicParser.Proof.DeductionTest" />
+      <option name="PACKAGE_NAME" value="ru.skipor.MathLogic.Proof" />
+      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogic.Proof.DeductionTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -564,8 +678,30 @@
       <module name="ExpressionParser" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.skipor.MathLogicParser.Proof" />
-      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogicParser.Proof.QuickTest" />
+      <option name="PACKAGE_NAME" value="ru.skipor.MathLogic.Proof" />
+      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogic.Proof.QuickTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CounterexampleGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExpressionParser" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.skipor.MathLogic.Form.Checker" />
+      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogic.Form.Checker.CounterexampleGeneratorTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -596,6 +732,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -621,19 +770,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -671,7 +807,7 @@
       <method />
     </configuration>
     <configuration default="false" name="mainTest" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogicParser.MainTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogic.Tasks.MainTest" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -712,19 +848,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Application.mainTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.Test" />
-      <item index="2" class="java.lang.String" itemvalue="Application.MainChecker" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MainTask2" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ProofsTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.DeductionTest" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.QuickTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.MainTask2" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ProofsTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DeductionTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.QuickTest" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.CounterexampleGeneratorTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DeductionTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CounterexampleGeneratorTest" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.QuickTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ProofsTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.MainTask2" />
-        <item index="4" class="java.lang.String" itemvalue="Application.MainChecker" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DeductionTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ProofsTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.MainTask2" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -786,13 +922,18 @@
       <created>1396892966372</created>
       <updated>1396892966372</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="bugs in task 2 fixed">
+      <created>1396960258218</created>
+      <updated>1396960258218</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="99" y="100" width="1240" height="700" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -800,16 +941,14 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32650602" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26323318" sideWeight="0.6708229" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44819278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="99" y="100" width="1240" height="700" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23493975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942554" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -817,12 +956,13 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253012" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="99" y="100" width="1240" height="700" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="99" y="100" width="1240" height="700" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -830,8 +970,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26323318" sideWeight="0.6708229" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44819278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44819278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942554" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -887,105 +1027,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1110">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/ParserException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="360">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1440">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTask1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="825">
-          <caret line="34" column="132" selection-start-line="34" selection-start-column="132" selection-end-line="34" selection-end-column="132" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1125">
-          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resourceProofs/namedProofs.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="255">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1110">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/ParserException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="360">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1440">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="189" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/src.zip!/java/io/BufferedWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="263" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/ParserException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="360">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/startScript">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="802">
@@ -1049,13 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTask1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
@@ -1067,110 +1101,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3146853" vertical-offset="3015" max-vertical-offset="7965">
           <caret line="235" column="18" selection-start-line="235" selection-start-column="18" selection-end-line="235" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/FormInserter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="855">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/UnaryNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06993007" vertical-offset="0" max-vertical-offset="765">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/MainTask2.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTask2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="690">
           <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/UnaryOperation.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/UnaryOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/BinaryNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/BinaryOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/VariableValues.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/VariableValues.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Form.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Form/Variable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="915">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/DeductionTest.java">
+    <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/DeductionTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55282557" vertical-offset="0" max-vertical-offset="407">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/ProofsTest.java">
+    <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/ProofsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63255817" vertical-offset="73" max-vertical-offset="540">
           <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/FormParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3883721" vertical-offset="1408" max-vertical-offset="2070">
-          <caret line="117" column="35" selection-start-line="117" selection-start-column="35" selection-end-line="117" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testProofs/correct0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="131804" max-vertical-offset="132555">
-          <caret line="8830" column="21" selection-start-line="8830" selection-start-column="21" selection-end-line="8830" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resourceProofs/namedProofs.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1178,7 +1143,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1186,61 +1150,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="397680">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testProofs/correctDeduction0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.6" vertical-offset="0" max-vertical-offset="132615">
-          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testProofs/correctDeduction00.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-          <caret line="0" column="48" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testProofs/correct1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.5" vertical-offset="395775" max-vertical-offset="397680">
-          <caret line="26424" column="36" selection-start-line="26424" selection-start-column="36" selection-end-line="26424" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/AxiomsSystems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testProofs/correctDeduction0.txt.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14822.4" vertical-offset="27045" max-vertical-offset="397695">
-          <caret line="26507" column="13" selection-start-line="26507" selection-start-column="13" selection-end-line="26507" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="990">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogicParser/Proof/QuickTest.java">
+    <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/QuickTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
@@ -1248,27 +1161,246 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/ProofBank.java">
+    <entry file="file://$PROJECT_DIR$/testProofs/correct0.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="930">
-          <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
+        <state vertical-scroll-proportion="106.871704" vertical-offset="71640" max-vertical-offset="132555">
+          <caret line="8830" column="21" selection-start-line="8830" selection-start-column="21" selection-end-line="8830" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProofs/correct1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02636204" vertical-offset="396825" max-vertical-offset="397680">
+          <caret line="26456" column="198" selection-start-line="26456" selection-start-column="198" selection-end-line="26456" selection-end-column="198" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProofs/correctDeduction00.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <caret line="0" column="48" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProofs/correctDeduction0.txt.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="31080" max-vertical-offset="397695">
+          <caret line="26507" column="13" selection-start-line="26507" selection-start-column="13" selection-end-line="26507" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProofs/correctDeduction0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6" vertical-offset="84660" max-vertical-offset="132615">
+          <caret line="5655" column="0" selection-start-line="5655" selection-start-column="0" selection-end-line="5655" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Variable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/Deduction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
+          <caret line="31" column="55" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4861" max-vertical-offset="16095">
+          <caret line="370" column="0" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/Gen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="690">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/ProofBank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="930">
+          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Proof.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTask1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2696" max-vertical-offset="3255">
-          <caret line="196" column="16" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.34416825" vertical-offset="0" max-vertical-offset="523">
+          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/AxiomsSystems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogicParser/Proof/Deduction.java">
+    <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogic/Form/Checker/CounterexampleGeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70472443" vertical-offset="872" max-vertical-offset="1380">
-          <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="600">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/BinaryNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1245">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/UnaryNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/ProofGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="900">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceProofs/cpded.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="569" max-vertical-offset="1140">
+          <caret line="70" column="16" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceProofs/cp.out.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Form.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceProofs/cp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceProofs/fOrNotf.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2355">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceProofs/namedProofs.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="659" max-vertical-offset="3405">
+          <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceProofs/work">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2585616" vertical-offset="0" max-vertical-offset="840">
+          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceProofs/work.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8458904" vertical-offset="226" max-vertical-offset="810">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="1590">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/FormHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1155">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/BinaryOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceProofs/binaryCustomNamedProofs.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.290909" vertical-offset="1809" max-vertical-offset="2535">
+          <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceProofs/unaryCustomNamedProofs.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8181818" vertical-offset="0" max-vertical-offset="315">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Parser/FormParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="2280">
+          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Checker/CounterexampleGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2340">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding>
+            <element signature="e#2647#2648#0" expanded="true" />
+            <element signature="e#2714#2715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/Proof.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26888603" vertical-offset="660" max-vertical-offset="4365">
+          <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+          <folding>
+            <element signature="e#1618#1619#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
