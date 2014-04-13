@@ -13,7 +13,7 @@ public class DeductionTest {
     @Test
     public void testGetFinal() throws Exception {
 
-        Deduction deduction = new Deduction(new Proof("testProofs/correctDeduction0.txt"));
+        Deduction deduction = new Deduction(Proof.createProof("testProofs/correctDeduction0.txt"));
         Proof proof = deduction.getFinal();
         assertEquals(0, proof.check());
 
@@ -21,7 +21,7 @@ public class DeductionTest {
     @Test
     public void testGetFinal1() throws Exception {
 
-        Deduction deduction = new Deduction(new Proof("testProofs/correct1.txt"));
+        Deduction deduction = new Deduction(Proof.createProof("testProofs/correct1.txt"));
         Proof proof = deduction.getFinal();
         assertEquals(0, proof.check());
 

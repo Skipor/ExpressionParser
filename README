@@ -1,2 +1,4 @@
-This program checks Math Logic proofs.
-To run it type "java -jar ExpressionParser.jar" in console, or lunch a ./startScript
+Math logic course home works
+Tasks 1, 2, 3 implemented
+Run: ./MathLogic task_num input_file_name
+example ./MathLogic 1 input.txt

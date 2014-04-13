@@ -1,0 +1,1 @@
+java -cp ExpressionParser.jar ru.skipor.MathLogic.Tasks.MainTask$1 $2

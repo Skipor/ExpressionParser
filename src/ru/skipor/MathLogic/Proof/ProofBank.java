@@ -4,9 +4,7 @@ import ru.skipor.MathLogic.Form.Form;
 import ru.skipor.MathLogic.Form.FormHelper;
 import ru.skipor.MathLogic.Form.Parser.FormParser;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +21,9 @@ public class ProofBank {
     private static final String NAMED_PROOFS_FILE_NAME = "resourceProofs/namedProofs.txt";
 
     static {
-        try (BufferedReader reader = new BufferedReader(new FileReader(NAMED_PROOFS_FILE_NAME))) {
+//        InputStream inputStream = new FileInputStream(NAMED_PROOFS_FILE_NAME);
+        InputStream inputStream = ProofGenerator.class.getClassLoader().getResourceAsStream(NAMED_PROOFS_FILE_NAME);
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             List<Form> statements = new ArrayList<>();
             String lastStatement = "";
             String nextStatement;
@@ -33,16 +33,14 @@ public class ProofBank {
                     statements.add(FormParser.parse(nextStatement));
                     lastStatement = nextStatement;
                 } else {
-                    proofsByNames.put(lastStatement, new Proof(statements));
+                    proofsByNames.put(lastStatement, Proof.createProof(statements));
                     statements = new ArrayList<>();
                 }
             }
 //            System.out.println(lastStatement);
-            proofsByNames.put(lastStatement, new Proof(statements));
+            proofsByNames.put(lastStatement, Proof.createProof(statements));
 
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (FormParser.ParserException e) {
+        } catch (IOException | FormParser.ParserException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
     }
@@ -58,7 +56,7 @@ public class ProofBank {
         for (Form statement : initialStatements) {
             statements.add(FormHelper.insert(statement, arguments));
         }
-        return new Proof(statements);
+        return Proof.createProof(statements);
     }
 
 

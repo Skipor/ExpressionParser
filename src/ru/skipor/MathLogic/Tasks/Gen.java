@@ -34,7 +34,7 @@ public class Gen {
             writer.write(builder.toString());
         }
 
-        Proof proof = new Proof("resourceProofs/cp.out.txt");
+        Proof proof = Proof.createProof("resourceProofs/cp.out.txt");
         assert (proof.check() == 0);
     }
 }

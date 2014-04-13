@@ -6,7 +6,10 @@ import ru.skipor.MathLogic.Proof.Proof;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * User: Vladimir Skipor
@@ -21,82 +24,7 @@ public class CounterexampleGenerator {
     private final Variable[] variables;
     private final boolean[] values;
     private final int variablesCount;
-    public static final List<List<Form>> formArgumentProofs;
 
-
-    static int getProofIndex(BinaryOperation binaryOperation, boolean left, boolean right) {
-        int index = 0;
-        switch (binaryOperation)
-        {
-//            case ENTAILMENT: index |=0;
-//                break;
-            case DISJUNCTION: index|=0x4;
-                break;
-            case CONJUNCTION: index|=0x8;
-                break;
-
-        }
-        if (left) {
-            index|=0x2;
-        }
-        if (right) {
-            index|=0x1;
-        }
-        return index;
-    }
-
-    static int getProofIndex(UnaryOperation unaryOperation, boolean argument) {
-
-        int index = 0;
-//        switch (unaryOperation) {
-//            case NEGATION:
-                index |= 0xC;
-//                break;
-//        }
-        if (argument) {
-            index|=1;
-        }
-        return index;
-    }
-//    static Proof getProofFromArgument(Form form) {
-//        int index;
-//        if (form instanceof BinaryNode) {
-//            return
-//        }
-//    }
-
-    static {
-        formArgumentProofs = new ArrayList<>(14);
-        try {
-            try (BufferedReader binaryReader = new BufferedReader(new FileReader("binaryCustomNamedProofs.txt"));
-                 BufferedReader unaryReader = new BufferedReader(new FileReader(("unaryCustomNamedProofs.txt")))) {
-                ArrayList<Form> proof = null;
-                Set<Form> argumetns = new HashSet<>(4);
-                String currentLine = null;
-                while ((currentLine = binaryReader.readLine()) != null) {
-                    if (currentLine == "") {
-                        proof = null;
-                        argumetns.clear();
-                        continue;
-                    }
-                    if (proof == null) {
-                        proof = new ArrayList<>();
-                        String[] header = currentLine.split(Proof.HEADER_SPLIT_REGEX);
-
-
-                    }
-
-                }
-
-
-
-
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 
 
 

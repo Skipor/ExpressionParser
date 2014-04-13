@@ -1,9 +1,10 @@
 package ru.skipor.MathLogic.Tasks;
 
-import ru.skipor.MathLogic.Proof.Deduction;
+import ru.skipor.MathLogic.Form.Form;
+import ru.skipor.MathLogic.Form.Parser.FormParser;
 import ru.skipor.MathLogic.Proof.Proof;
+import ru.skipor.MathLogic.Proof.ProofGenerator;
 
-import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 /**
@@ -16,6 +17,14 @@ public class MainTest {
 
 
     public static void main(String[] args) throws Exception {
+
+        final Form form = FormParser.parse("A&!A->(B|C)&!A");
+//        final Form form = FormParser.parse("!!A->A");
+        Proof proof = ProofGenerator.generate(form);
+        assert (proof.check() == 0);
+        try (FileWriter fileWriter = new FileWriter("resourceProofs/work.out")) {
+            fileWriter.write(proof.toString(true));
+        }
 
 
 ////        final Form form = FormParser.parse("(!B->!A)->(A->B)");
@@ -34,12 +43,12 @@ public class MainTest {
 //            int incorrectStatement = Proof.checkFile("input.txt");
 //            System.out.println(incorrectStatement);
 
-        Deduction deduction = new Deduction(new Proof("resourceProofs/work"));
-//deduction.apply();
-        Proof proof = deduction.getProof();
-        proof.removeCopies();
-        assert (proof.check() == 0);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("resourceProofs/work.out"))) {
+//        Deduction deduction = new Deduction(Proof.createProof("resourceProofs/work"));
+////deduction.apply();
+//        Proof proof = deduction.getProof();
+//        proof.removeCopies();
+//        assert (proof.check() == 0);
+//        try (BufferedWriter writer = new BufferedWriter(new FileWriter("resourceProofs/work.out"))) {
 //
 //            StringBuilder builder = new StringBuilder();
 //            Form f = FormParser.parse("f");
@@ -55,8 +64,8 @@ public class MainTest {
 //            builder.append("!(f|!f)->!!f").append("\n");
 //            builder.append(FormHelper.insert(AxiomsSystems.formsOfSystemsOfAxioms[8], FormParser.parse("!(f|!f)"), FormParser.parse("!f")));
 //            writer.write(builder.toString());
-            writer.write(proof.toString());
-        }
+//            writer.write(proof.toString());
+    }
 
 //        Proof proof = new Proof("resourceProofs/cpded.txt");
 //        System.out.println(proof.removeCopies());
@@ -95,6 +104,5 @@ public class MainTest {
 
 //            }
 
-    }
 }
 

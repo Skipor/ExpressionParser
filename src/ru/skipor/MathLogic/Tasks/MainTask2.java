@@ -18,11 +18,12 @@ public class MainTask2 {
         if (args.length > 0) {
             final String inputFileName = args[0];
 //            final String inputFileName = "testProofs/correctDeduction";
-            Proof proof = new Proof(inputFileName);
+            Proof proof = Proof.createProof(inputFileName);
             int incorrectStatement = proof.check();
             if (incorrectStatement == 0) {
                 Deduction deduction = new Deduction(proof);
-                System.out.println(deduction.apply());
+                deduction.apply();
+//                System.out.println(deduction.apply());
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(inputFileName + ".out"))) {
                     writer.write(deduction.getProof().toString(true));
                     System.out.println("All is ok. See result in *.out file");

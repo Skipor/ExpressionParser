@@ -6,6 +6,7 @@ import ru.skipor.MathLogic.Form.Parser.FormParser;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.*;
 
 /**
@@ -25,16 +26,47 @@ public class Proof {
     public static final String HEADER_SPLIT_REGEX = " *" + DELIMER + " *| *" + PROVABLE_FROM_REGEX + " *";
 
 
-    public Proof(List<Form> statements, List<Form> assumptions) {
+    private Proof(List<Form> statements, List<Form> assumptions) {
         this.statements = statements;
         this.assumptions = assumptions;
+        setProovingAsLastStatement();
+    }
+
+    private void setProovingAsLastStatement() {
         proving = statements.get(statements.size() - 1);
     }
 
+    public static Proof createProof(String fileName) {
+        try (Reader reader = new FileReader(fileName)) {
+            return createProof(reader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static Proof createProof(Reader reader) {
+        return new Proof(reader);
+    }
+
+    public static Proof createProof(List<Form> statements) {
+        return new Proof(statements);
+    }
+
+    public static Proof createProof(Proof proof) {
+        return new Proof(proof);
+    }
+
+    public static Proof createProof(List<Form> statements, List<Form> assumptions) {
+        return new Proof(statements, assumptions);
+    }
 
 
     public int removeCopies() {
         int count = 0;
+
+        Form last = statements.get(statements.size() - 1);
+
         Set<Form> set = new HashSet<>(statements.size() / 2);
         List<Form> noCopiesStatements = new ArrayList<>(statements.size() / 2);
         for (Form form : statements) {
@@ -46,31 +78,32 @@ public class Proof {
             }
 
         }
+        if (!noCopiesStatements.get(noCopiesStatements.size() - 1).equals(last)) {
+            noCopiesStatements.add(last);
+        }
+
         statements = noCopiesStatements;
 
         return count;
     }
 
 
-
     public static int checkFile(String fileName) {
-        return new Proof(fileName).check();
+        return createProof(fileName).check();
     }
 
-    public Proof(List<Form> statements) {
+    private Proof(List<Form> statements) {
         this(statements, null);
     }
 
 
-
-
-    public Proof(String fileName) {
+    private Proof(Reader in) {
 
 
         statements = new ArrayList<>();
         assumptions = null;
         try (
-                BufferedReader reader = new BufferedReader(new FileReader(fileName))
+                BufferedReader reader = new BufferedReader(in)
         ) {
 
 
@@ -88,13 +121,15 @@ public class Proof {
                 statements.add(FormParser.parse(firstString));
             }
 
+            String readed;
+            while ((readed = reader.readLine()) != null) {
 
-            while (reader.ready()) {
-                String readed = reader.readLine();
+
                 statements.add(FormParser.parse(readed));
 //            System.out.println(nextStatement.toString());
 //            System.out.println(Integer.toString(linesReaded));
             }
+            setProovingAsLastStatement();
 
 
         } catch (FormParser.ParserException e) {
@@ -107,7 +142,7 @@ public class Proof {
 
     }
 
-    public Proof(Proof proof) {
+    private Proof(Proof proof) {
         this.statements = new ArrayList<>(proof.statements);
         this.assumptions = new ArrayList<>(proof.assumptions);
         this.proving = proof.proving;
@@ -130,7 +165,7 @@ public class Proof {
                     || assumptionsSet.contains(nextStatement)) {
                 futureStatements.add(nextStatement);
             } else {
-                System.out.println("standart fail " + (statementsRead ) + " " + nextStatement);
+                System.out.println("standart fail " + (statementsRead) + " " + nextStatement);
                 return statementsRead;
 
             }
@@ -240,6 +275,7 @@ public class Proof {
         if (!left.proving.equals(right.proving)) {
             throw new IllegalArgumentException("provings mast be same to concat proofs");
         }
+        Form proving = left.proving;
         if (left.assumptions.size() != right.assumptions.size()) {
             throw new IllegalArgumentException("different assumptions size");
         }
@@ -268,13 +304,19 @@ public class Proof {
         right = rightDeduction.getProof();
         left.statements.addAll(right.statements);
         left.statements.addAll(ProofBank.getProofByName("f|!f", assumption).statements);
-        Form mpStatement = FormHelper.insert(AxiomsSystems.formsOfSystemsOfAxioms[7], assumption);
+        Form mpStatement = FormHelper.insert(
+                AxiomsSystems.formsOfSystemsOfAxioms[7]
+                , assumption
+                , new UnaryNode(assumption, UnaryOperation.NEGATION)
+                , proving
+        );
         left.statements.add(mpStatement);
         for (int i = 0; i < 3; i++) {
             mpStatement = ((BinaryNode) mpStatement).rightArgument;
             left.statements.add(mpStatement);
 
         }
+        left.proving = proving;
         left.removeCopies();
 
 

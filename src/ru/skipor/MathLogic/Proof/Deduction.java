@@ -16,10 +16,10 @@ import java.util.Set;
 public class Deduction {
     private List<Form> assumptions;
     private List<Form> statements;
-    private static ProofBank proofBank = new ProofBank();
+//    private static ProofBank proofBank = new ProofBank();
 
     public Deduction(Proof proof) {
-        assert (proof.check() == 0); // todo: remove
+//        assert (proof.check() == 0); // todo: remove
         this.assumptions = proof.assumptions;
         this.statements = proof.statements;
     }
@@ -38,15 +38,15 @@ public class Deduction {
             List<Form> futureStatements = new ArrayList<>();
             for (Form currentStatement : statements) {
                 if (assumptionSet.contains(currentStatement) || AxiomsSystems.isAxiom(currentStatement)) {
-                    futureStatements.addAll(proofBank.getProofByName("o->f", currentStatement, alpha).statements);
+                    futureStatements.addAll(ProofBank.getProofByName("o->f", currentStatement, alpha).statements);
                 } else if (currentStatement.equals(alpha)) {
-                    futureStatements.addAll(proofBank.getProofByName("f->f", alpha).statements);
+                    futureStatements.addAll(ProofBank.getProofByName("f->f", alpha).statements);
                 } else {
                     Form antecedent = Proof.getModusPonensConditionalStatement(currentStatement,
                             statements);
                     if (antecedent != null) {
 
-                        futureStatements.addAll(proofBank.getProofByName("f->p", alpha, antecedent, currentStatement).statements);
+                        futureStatements.addAll(ProofBank.getProofByName("f->p", alpha, antecedent, currentStatement).statements);
                     } else {
                         System.out.println(statements.indexOf(currentStatement));
                         for (Form st : futureStatements) {
@@ -67,7 +67,7 @@ public class Deduction {
 
 
 
-            assert (getProof().check() == 0); // todo: remove
+//            assert (getProof().check() == 0); // todo: remove
             return true;
 
 
@@ -82,7 +82,7 @@ public class Deduction {
 
 
     public Proof getProof() {
-        return new Proof(statements, assumptions);
+        return Proof.createProof(statements, assumptions);
     }
 
     public Proof getFinal() {
@@ -90,6 +90,6 @@ public class Deduction {
             if (!(apply())) break;
 
         }
-        return new Proof(statements, assumptions);
+        return Proof.createProof(statements, assumptions);
     }
 }
