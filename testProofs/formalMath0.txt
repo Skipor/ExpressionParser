@@ -1,0 +1,27 @@
+a = d, a= g|- (a=a)
+a = d
+a = g
+a = b -> a = c -> b = c
+(@y(?z(A(y)))) -> ?z(A(z))
+(a = b -> a = c -> b = c) -> (A&B->A) -> (a = b -> a = c -> b = c)
+A&B->A
+(A&B->A) -> (a = b -> a = c -> b = c)
+(A&B->A) -> @a(a = b -> a = c -> b = c)
+@a(a = b -> a = c -> b = c)
+@a(a = b -> a = c -> b = c) -> (a + 0 = b -> a + 0 = c -> b = c)
+(a + 0 = b -> a + 0 = c -> b = c)
+(a + 0 = b -> a + 0 = c -> b = c) -> (A&B->A) -> (a + 0 = b -> a + 0 = c -> b = c)
+(A&B->A) -> (a + 0 = b -> a + 0 = c -> b = c)
+(A&B->A) -> @b(a + 0 = b -> a + 0 = c -> b = c)
+@b(a + 0 = b -> a + 0 = c -> b = c)
+@b(a + 0 = b -> a + 0 = c -> b = c) -> (a + 0 = a -> a + 0 = c -> a = c)
+(a + 0 = a -> a + 0 = c -> a = c)
+(a + 0 = a -> a + 0 = c -> a = c) -> (A&B->A) -> (a + 0 = a -> a + 0 = c -> a = c)
+(A&B->A) -> (a + 0 = a -> a + 0 = c -> a = c)
+(A&B->A) -> @c(a + 0 = a -> a + 0 = c -> a = c)
+@c(a + 0 = a -> a + 0 = c -> a = c)
+@c(a + 0 = a -> a + 0 = c -> a = c) -> (a + 0 = a -> a + 0 = a -> a = a)
+(a + 0 = a -> a + 0 = a -> a = a)
+a + 0 = a
+a + 0 = a -> a = a
+a = a

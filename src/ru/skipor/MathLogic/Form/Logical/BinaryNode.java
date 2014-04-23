@@ -1,10 +1,15 @@
-package ru.skipor.MathLogic.Form;
+package ru.skipor.MathLogic.Form.Logical;
 
-public class BinaryNode implements Form {
+import ru.skipor.MathLogic.Form.Form;
+import ru.skipor.MathLogic.Form.Substitutions;
+import ru.skipor.MathLogic.Form.Term.Variable;
+
+import java.util.Set;
+
+public class BinaryNode extends LogicalOperation {
     public final Form leftArgument;
     public final Form rightArgument;
     public final BinaryOperation operation;
-    private boolean value;
 
 
     @Override
@@ -34,16 +39,6 @@ public class BinaryNode implements Form {
     }
 
     @Override
-    public boolean evaluate(VariableValues values) {
-        return value = operation.apply(leftArgument.evaluate(values), rightArgument.evaluate(values));
-    }
-
-    @Override
-    public boolean getValue() {
-        return value;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof BinaryNode)) return false;
@@ -58,20 +53,48 @@ public class BinaryNode implements Form {
         return true;
     }
 
-    @Override
-    public int hashCode() {
+    protected int internalHashCode() {
         int result = leftArgument != null ? leftArgument.hashCode() : 0;
         result = 31 * result + (rightArgument != null ? rightArgument.hashCode() : 0);
         result = 31 * result + (operation != null ? operation.hashCode() : 0);
         return result;
     }
 
+    @Override
+    public Set<Variable> getFreeVariables() {
+        Set<Variable> variableSet = leftArgument.getFreeVariables();
+        variableSet.addAll(rightArgument.getFreeVariables());
+        return variableSet;
+    }
+
     public BinaryNode(Form leftArgument, Form rightArgument, BinaryOperation operation) {
         this.leftArgument = leftArgument;
         this.rightArgument = rightArgument;
         this.operation = operation;
+        hashCode = internalHashCode();
     }
 
 
+    @Override
+    public boolean containsVariableAsFree(Variable variable) {
+        return (leftArgument.containsVariableAsFree(variable) || rightArgument.containsVariableAsFree(variable));
+    }
+
+    @Override
+    public boolean isFreeToSubstituteFor(Set<Variable> variablesInSubstitution, Variable variable) {
+        return leftArgument.isFreeToSubstituteFor(variablesInSubstitution, variable)
+                && rightArgument.isFreeToSubstituteFor(variablesInSubstitution, variable);
+    }
+
+    @Override
+    public boolean equalsButSubstitutions(Form formWithSubstitutions, Substitutions substitutions) {
+        if (formWithSubstitutions instanceof BinaryNode) {
+            if(operation.equals(((BinaryNode) formWithSubstitutions).operation)) {
+                return leftArgument.equalsButSubstitutions(((BinaryNode) formWithSubstitutions).leftArgument, substitutions)
+                        && rightArgument.equalsButSubstitutions(((BinaryNode) formWithSubstitutions).rightArgument, substitutions);
+            }
+        }
+        return false;
+    }
 }
 

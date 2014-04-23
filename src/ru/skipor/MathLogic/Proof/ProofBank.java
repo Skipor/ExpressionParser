@@ -11,18 +11,23 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * User: Vladimir Skipor
- * Email: vladimirskipor@gmail.com
- * Date: 9/16/13
- * Time: 12:04 AM
- */
+* User: Vladimir Skipor
+* Email: vladimirskipor@gmail.com
+* Date: 9/16/13
+* Time: 12:04 AM
+*/
 public class ProofBank {
     private static Map<String, Proof> proofsByNames = new HashMap<>();
     private static final String NAMED_PROOFS_FILE_NAME = "resourceProofs/namedProofs.txt";
 
     static {
-//        InputStream inputStream = new FileInputStream(NAMED_PROOFS_FILE_NAME);
-        InputStream inputStream = ProofGenerator.class.getClassLoader().getResourceAsStream(NAMED_PROOFS_FILE_NAME);
+//        InputStream inputStream = null;
+//        try {
+//            inputStream = new FileInputStream(NAMED_PROOFS_FILE_NAME);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+        InputStream inputStream = ProofBank.class.getClassLoader().getResourceAsStream(NAMED_PROOFS_FILE_NAME);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             List<Form> statements = new ArrayList<>();
             String lastStatement = "";
@@ -45,7 +50,7 @@ public class ProofBank {
         }
     }
 
-    public static Proof getProofByName(String name, Form ... arguments) {
+    public static Proof getProofByName(String name, Form... arguments) {
         List<Form> statements = new ArrayList<>();
         Proof proof = proofsByNames.get(name);
         if (proof == null) {

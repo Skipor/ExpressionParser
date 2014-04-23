@@ -1,12 +1,8 @@
-package ru.skipor.MathLogic.Form;
+package ru.skipor.MathLogic.Form.Logical;
 
 public enum UnaryOperation {
 
     NEGATION("!") {
-        @Override
-        public boolean apply(boolean argument) {
-            return !argument;
-        }
     },;
 
 
@@ -16,7 +12,6 @@ public enum UnaryOperation {
         this.token = token;
     }
 
-    abstract public boolean apply(boolean argument);
     @Override
     public String toString() {
         return token;

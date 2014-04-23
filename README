@@ -1,4 +1,5 @@
 Math logic course home works
-Tasks 1, 2, 3 implemented
+Tasks 4, 5 implemented
+NB: task 4 implements  deduction theorem in formal math too.
 Run: ./MathLogic task_num input_file_name
-example ./MathLogic 1 input.txt
+example ./MathLogic 4 input.txt

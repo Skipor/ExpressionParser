@@ -1,89 +1,172 @@
 package ru.skipor.MathLogic.Proof;
 
-import ru.skipor.MathLogic.Form.BinaryNode;
 import ru.skipor.MathLogic.Form.Form;
-import ru.skipor.MathLogic.Form.UnaryNode;
-import ru.skipor.MathLogic.Form.Variable;
+import ru.skipor.MathLogic.Form.Logical.BinaryNode;
+import ru.skipor.MathLogic.Form.Logical.BinaryOperation;
+import ru.skipor.MathLogic.Form.Logical.QuantifierNode;
+import ru.skipor.MathLogic.Form.Logical.QuantifierOperation;
 import ru.skipor.MathLogic.Form.Parser.FormParser;
+import ru.skipor.MathLogic.Form.Term.Constant;
+import ru.skipor.MathLogic.Form.Term.Term;
+import ru.skipor.MathLogic.Form.Term.UnaryFunction;
+import ru.skipor.MathLogic.Form.Term.Variable;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class AxiomsSystems {
+
+    private static String errorMessage;
+
+    public static String getErrorMessage() {
+        return errorMessage;
+    }
 
     private AxiomsSystems() {
     }
 
     public static final String[] systemsOfAxioms = {
-            "f->o->f",
-            "(f->o)->(f->o->p)->(f->p)",
-            "f->o->f&o",
-            "f&o->f",
-            "f&o->o",
-            "f->f|o",
-            "o->f|o",
-            "(f->p)->(o->p)->(f|o->p)",
-            "(f->o)->(f->!o)->!f",
-            "!!f->f"
+            "A->B->A",
+            "(A->B)->(A->B->C)->(A->C)",
+            "A->B->A&B",
+            "A&B->A",
+            "A&B->B",
+            "A->A|B",
+            "B->A|B",
+            "(A->C)->(B->C)->(A|B->C)",
+            "(A->B)->(A->!B)->!A",
+            "!!A->A"
     };
-    public static Form[] formsOfSystemsOfAxioms = new Form[10];
+
+    public static final String[] notLogicAxioms = {
+            "a = b -> a' = b'",
+            "a = b -> a = c -> b = c",
+            "a' = b' -> a = b",
+            "!(a' = 0)",
+            "a + b' = (a +b)'",
+            "a + 0 = a",
+            "a * 0 = 0",
+            "a * b' = a * b + a"
+
+    };
+    public final static Form[] formsOfSystemsOfAxioms = new Form[10];
+    public final static Set<Form> notLogicAxiomsSet = new HashSet<>();
 
     static {
         for (int i = 0; i < systemsOfAxioms.length; i++) {
             try {
                 formsOfSystemsOfAxioms[i] = FormParser.parse(systemsOfAxioms[i]);
-
-//                System.out.println(formsOfSystemsOfAxioms[i].toString());    ////////////////////////////
-
             } catch (FormParser.ParserException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
         }
+        for (String axiom : notLogicAxioms) {
+            notLogicAxiomsSet.add(Form.create(axiom));
+        }
     }
 
-    public static boolean isAxiom(Form statement) throws IllegalStateException{
+    public static boolean isAxiom(Form statement) throws IllegalStateException {
+        if (notLogicAxiomsSet.contains(statement)) {
+            return true;
+        }
         for (Form axiom : formsOfSystemsOfAxioms) {
-            Map<String, Form> variablesValues = new HashMap<String, Form>(5);
-            if (isAxiomPart(axiom, statement, variablesValues)) {
+            if (axiom.equalsButSubstitutions(statement) != null) {
                 return true;
             }
+
         }
 
+        if(isInductionAxiom(statement)) {
+            return true;
+        }
+        if (statement instanceof BinaryNode
+                && ((BinaryNode) statement).operation.equals(BinaryOperation.ENTAILMENT)) {
+            final Form la = ((BinaryNode) statement).leftArgument;
+            final Form ra = ((BinaryNode) statement).rightArgument;
+            Form noSub, withSub;
+            Variable variable;
+            if (la instanceof QuantifierNode && ((QuantifierNode) la).operation.equals(QuantifierOperation.UNIVERSAL)) {
+                variable = ((QuantifierNode) la).boundingVariable;
+                noSub = ((QuantifierNode) la).argument;
+                withSub = ra;
+            } else if (ra instanceof QuantifierNode && ((QuantifierNode) ra).operation.equals(QuantifierOperation.EXISTENTIAL)) {
+                variable = ((QuantifierNode) ra).boundingVariable;
+                noSub = ((QuantifierNode) ra).argument;
+                withSub = la;
+            } else {
+                errorMessage = null;
+                return false;
+            }
+            if(!noSub.containsVariableAsFree(variable)){
+                return true;
+            }
+            Term sub = noSub.getOnlySubstitution(withSub, variable);
+//            System.out.println(sub); // todo remove
+
+            if (sub != null) {
+                if(noSub.isFreeToSubstituteFor(sub, variable)) {
+                    return true;
+                } else {
+                    errorMessage = "терм " + sub.toString() + " не свободен для подстановки в формулу " + noSub.toString() + " вместо переменной " + variable.toString() +".";
+                    return false;
+                }
+            } else {
+                errorMessage = null;
+                return false;
+            }
+
+        }
+        errorMessage = null;
         return false;
+
+
     }
 
-    protected static boolean isAxiomPart(Form axiomPart, Form statementPart, Map<String, Form> variableValues) throws IllegalStateException {
-        if (axiomPart instanceof Variable) {
-            String variableName = axiomPart.toString();
-            if (variableValues.containsKey(variableName)) {
-                return statementPart.equals(variableValues.get(variableName));
-            } else {
-                variableValues.put(variableName, statementPart);
-                return true;
+    private static boolean isInductionAxiom(Form statement) {
+        if (statement instanceof BinaryNode
+                && ((BinaryNode) statement).operation.equals(BinaryOperation.ENTAILMENT)) {
+            Form pattern = ((BinaryNode) statement).rightArgument;
+            Form temp1 = ((BinaryNode) statement).leftArgument;
+            if (temp1 instanceof BinaryNode
+                    && ((BinaryNode) temp1).operation.equals(BinaryOperation.CONJUNCTION)) {
+
+                final Form rightTemp1 = ((BinaryNode) temp1).rightArgument;
+                if(rightTemp1 instanceof QuantifierNode
+                        && ((QuantifierNode) rightTemp1).operation.equals(QuantifierOperation.UNIVERSAL)) {
+
+                    Variable var = ((QuantifierNode) rightTemp1).boundingVariable;
+
+                    final Term onlySubstitution = pattern.getOnlySubstitution(((BinaryNode) temp1).leftArgument, var);
+//                    System.out.println("only sub is " + onlySubstitution); // todo remove
+                    if (Constant.ZERO.equals(onlySubstitution)) {
+                        Form temp2 = ((QuantifierNode) rightTemp1).argument;
+                        if (temp2 instanceof BinaryNode
+                                && ((BinaryNode) temp2).operation.equals(BinaryOperation.ENTAILMENT)) {
+                            if(((BinaryNode) temp2).leftArgument.equals(pattern)) {
+                                Form rightTemp2 = ((BinaryNode) temp2).rightArgument;
+                                if (new UnaryFunction("'", var).equals(pattern.getOnlySubstitution(rightTemp2, var))) {
+                                    return true;
+                                }
+
+                            }
+                        }
+
+                    }
+
+
+
+                }
+
+
+
             }
+
+
         }
+        return false;
 
-        if (axiomPart instanceof UnaryNode) {
-
-            if (statementPart instanceof UnaryNode) {
-                return (((UnaryNode) axiomPart).operation.equals(((UnaryNode) statementPart).operation)
-                        && isAxiomPart(((UnaryNode) axiomPart).argument, (((UnaryNode) statementPart).argument), variableValues));
-            } else {
-                return false;
-            }
-        }
-
-        if (axiomPart instanceof BinaryNode) {
-            if (statementPart instanceof BinaryNode) {
-                return ((BinaryNode) axiomPart).operation.equals(((BinaryNode) statementPart).operation)
-                        && isAxiomPart(((BinaryNode) axiomPart).leftArgument, ((BinaryNode) statementPart).leftArgument, variableValues)
-                        && isAxiomPart(((BinaryNode) axiomPart).rightArgument, ((BinaryNode) statementPart).rightArgument, variableValues);
-
-            } else {
-                return false;
-            }
-        }
-        throw new IllegalStateException("Surprising ru.skipor.MathLogic.Form in axiom :))");
     }
+
 }
+//
 

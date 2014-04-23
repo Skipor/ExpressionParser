@@ -1,1 +1,1 @@
-java -cp ExpressionParser.jar ru.skipor.MathLogic.Tasks.MainTask$1 $2
+java -ea -Xms2000m -Xmx2000m -cp ExpressionParser.jar ru.skipor.MathLogic.Tasks.MainTask$1 $2

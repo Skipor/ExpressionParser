@@ -1,14 +1,15 @@
 package ru.skipor.MathLogic.Proof;
 
-import static junit.framework.Assert.*;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
+
 /**
- * User: Vladimir Skipor
- * Email: vladimirskipor@gmail.com
- * Date: 4/6/14
- * Time: 2:54 PM
- */
+* User: Vladimir Skipor
+* Email: vladimirskipor@gmail.com
+* Date: 4/6/14
+* Time: 2:54 PM
+*/
 public class ProofsTest {
     @Test
     public void testCheckFile() throws Exception {
