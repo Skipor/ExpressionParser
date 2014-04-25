@@ -32,26 +32,26 @@ public class Deduction {
 
             final int alphaIndex = assumptions.size() - 1;
             Form alpha = assumptions.get(alphaIndex);
+            Proof.ModusPonensFounder modusPonensFounder = new Proof.ModusPonensFounder(statements.size());
 
             Set<Form> assumptionSet = new HashSet<>(assumptions);
             assumptionSet.remove(alpha);
             List<Form> futureStatements = new ArrayList<>();
             for (Form currentStatement : statements) {
                 if (assumptionSet.contains(currentStatement) || AxiomsSystems.isAxiom(currentStatement)) {
-                    futureStatements.addAll(ProofBank.getProofByName("o->f", currentStatement, alpha).statements);
+                    futureStatements.addAll(ProofBank.getProofByName("B->A", currentStatement, alpha).statements);
                 } else if (currentStatement.equals(alpha)) {
-                    futureStatements.addAll(ProofBank.getProofByName("f->f", alpha).statements);
+                    futureStatements.addAll(ProofBank.getProofByName("A->A", alpha).statements);
                 } else {
-                    Form antecedent = Proof.getModusPonensConditionalStatement(currentStatement,
-                            statements);
+                    Form antecedent = modusPonensFounder.getModusPonensConditionalStatement(currentStatement);
                     if (antecedent != null) {
 
-                        futureStatements.addAll(ProofBank.getProofByName("f->p", alpha, antecedent, currentStatement).statements);
+                        futureStatements.addAll(ProofBank.getProofByName("A->C", alpha, antecedent, currentStatement).statements);
                     } else {
-                        System.out.println(statements.indexOf(currentStatement));
-                        for (Form st : futureStatements) {
-                            System.out.println(st);
-                        }
+//                        System.out.println(statements.indexOf(currentStatement));
+//                        for (Form st : futureStatements) {
+//                            System.out.println(st);
+//                        }
 
                         throw new IllegalStateException(currentStatement.toString());
 
@@ -60,6 +60,7 @@ public class Deduction {
 
 
                 }
+                modusPonensFounder.add(currentStatement);
             }
             assumptions.remove(alphaIndex);
             statements = futureStatements;

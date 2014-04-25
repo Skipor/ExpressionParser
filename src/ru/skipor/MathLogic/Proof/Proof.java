@@ -1,6 +1,7 @@
 package ru.skipor.MathLogic.Proof;
 
-import ru.skipor.MathLogic.Form.*;
+import ru.skipor.MathLogic.Form.Form;
+import ru.skipor.MathLogic.Form.BinaryNode;
 import ru.skipor.MathLogic.Form.Parser.FormParser;
 
 import java.io.BufferedReader;
@@ -23,7 +24,6 @@ public class Proof {
     public static final String DELIMER = ",";
     public static final String PROVABLE_FROM_SIGN = "|-";
     public static final String PROVABLE_FROM_REGEX = "\\Q" + PROVABLE_FROM_SIGN + "\\E";
-    public static final String HEADER_SPLIT_REGEX = " *" + DELIMER + " *| *" + PROVABLE_FROM_REGEX + " *";
 
 
     private Proof(List<Form> statements, List<Form> assumptions) {
@@ -69,10 +69,10 @@ public class Proof {
 
         Set<Form> set = new HashSet<>(statements.size() / 2);
         List<Form> noCopiesStatements = new ArrayList<>(statements.size() / 2);
-        for (Form form : statements) {
-            if (!set.contains(form)) {
-                noCopiesStatements.add(form);
-                set.add(form);
+        for (Form Form : statements) {
+            if (!set.contains(Form)) {
+                noCopiesStatements.add(Form);
+                set.add(Form);
             } else {
                 count++;
             }
@@ -109,14 +109,13 @@ public class Proof {
 
             String firstString = reader.readLine();
             if (firstString.matches(".*" + PROVABLE_FROM_REGEX + ".+")) {
-                String[] strings = firstString.split(HEADER_SPLIT_REGEX);
-                assumptions = new ArrayList<>(strings.length);
-                for (int i = 0; i < strings.length - 1; ++i) {
-                    assumptions.add(FormParser.parse(strings[i]));
+                assumptions = new ArrayList<>();
+                String[] strings = firstString.split(PROVABLE_FROM_REGEX);
+                if (strings.length != 2) {
+                    throw new IllegalArgumentException("unsupported header format");
                 }
-                proving = FormParser.parse(strings[strings.length - 1]);
-
-
+                assumptions.addAll(FormParser.parseForms(strings[0]));
+                proving = FormParser.parse(strings[1]);
             } else {
                 statements.add(FormParser.parse(firstString));
             }
@@ -148,10 +147,79 @@ public class Proof {
         this.proving = proof.proving;
     }
 
+    static class ModusPonensFounder {
+
+        private final Map<Form, List<Form>> mpMap;
+        private final Set<Form> statemetnsSet;
+
+        ModusPonensFounder() {
+            mpMap = new HashMap<>();
+            statemetnsSet = new HashSet<>();
+        }
+
+        ModusPonensFounder(int size) {
+            mpMap = new HashMap<>(size);
+            statemetnsSet = new HashSet<>();
+        }
+
+        public void add(Form statement) {
+            statemetnsSet.add(statement);
+            if (statement instanceof BinaryNode) {
+                final Form ra = ((BinaryNode) statement).rightArgument;
+                final Form la = ((BinaryNode) statement).leftArgument;
+                if (!mpMap.containsKey(ra)) {
+
+                    final ArrayList<Form> list = new ArrayList<>();
+                    list.add(la);
+                    mpMap.put(ra, list);
+                } else {
+                    mpMap.get(ra).add(la);
+                }
+            }
+
+        }
+
+        public void addAll(Collection<? extends Form> forms) {
+            for (Form form : forms) {
+                add(form);
+            }
+        }
+
+        public boolean isModusPonens(Form statement) {
+            List<Form> leftParts = mpMap.get(statement);
+            if (leftParts != null) {
+                for (ListIterator<Form> formListIterator = leftParts.listIterator(leftParts.size()); formListIterator.hasPrevious(); ) {
+                    final Form form = formListIterator.previous();
+                    if (statemetnsSet.contains(form)) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+
+        }
+
+
+        public Form getModusPonensConditionalStatement(Form consequent) {
+            List<Form> leftParts = mpMap.get(consequent);
+            if (leftParts != null) {
+                for (ListIterator<Form> formListIterator = leftParts.listIterator(leftParts.size()); formListIterator.hasPrevious(); ) {
+                    final Form form = formListIterator.previous();
+                    if (statemetnsSet.contains(form)) {
+                        return form;
+                    }
+                }
+            }
+
+            return null;
+
+        }
+    }
 
     public int check() throws IllegalStateException {
 
-        List<Form> futureStatements = (assumptions == null) ? new ArrayList<Form>() : new ArrayList<>(assumptions);
+        ModusPonensFounder modusPonensFounder = new ModusPonensFounder(statements.size());
         Set<Form> assumptionsSet = new HashSet<>();
         if (assumptions != null) {
             assumptionsSet.addAll(assumptions);
@@ -161,18 +229,19 @@ public class Proof {
         for (Form nextStatement : statements) {
             statementsRead++;
             if (AxiomsSystems.isAxiom(nextStatement)
-                    || isModusPonensOf(nextStatement, futureStatements) != null
-                    || assumptionsSet.contains(nextStatement)) {
-                futureStatements.add(nextStatement);
+                    || modusPonensFounder.isModusPonens(nextStatement)
+                    || assumptionsSet.contains(nextStatement)
+                    ) {
+                modusPonensFounder.add(nextStatement);
             } else {
-                System.out.println("standart fail " + (statementsRead) + " " + nextStatement);
+//                System.out.println("standart fail " + (statementsRead) + " " + nextStatement);
                 return statementsRead;
 
             }
         }
 
         if (proving != null && !statements.get(statements.size() - 1).equals(proving)) {
-            System.out.println("proving fail " + statementsRead); // todo
+//            System.out.println("proving fail " + statementsRead); // todo
             return statementsRead + 1;
         }
 
@@ -181,30 +250,8 @@ public class Proof {
     }
 
 
-    public static ModusPonensPair isModusPonensOf(Form consequent, List<Form> statements) {
-
-        for (ListIterator<Form> iteratorAntecedent = statements.listIterator(); iteratorAntecedent.hasNext(); ) {
-            Form antecedent = iteratorAntecedent.next();
-            if (antecedent instanceof BinaryNode
-                    && ((BinaryNode) antecedent).operation == BinaryOperation.ENTAILMENT
-                    && consequent.equals(((BinaryNode) antecedent).rightArgument)) {
-                Form conditionalStatement = ((BinaryNode) antecedent).leftArgument;
-                for (ListIterator<Form> iteratorContext = statements.listIterator(); iteratorContext.hasNext(); ) {
-                    final Form context = iteratorContext.next();
-                    if (context.equals(conditionalStatement)) {
-
-//                                System.out.println("Statment " + Integer.toString(linesReaded) + " Modus Ponus "); ///////// /////////
 
 
-                        return new ModusPonensPair(iteratorContext.nextIndex() - 1, iteratorAntecedent.nextIndex() - 1);
-
-                    }
-                }
-            }
-        }
-
-        return null;
-    }
 
     @Override
     public String toString() {
@@ -241,97 +288,7 @@ public class Proof {
 
     }
 
-    public static Form getModusPonensConditionalStatement(Form consequent, List<Form> statements) {
-
-        for (Form antecedent : statements) {
-            if (antecedent.equals(consequent)) {
-                return null;
-
-            }
-            if (antecedent instanceof BinaryNode
-                    && ((BinaryNode) antecedent).operation == BinaryOperation.ENTAILMENT
-                    && consequent.equals(((BinaryNode) antecedent).rightArgument)) {
-                Form conditionalStatement = ((BinaryNode) antecedent).leftArgument;
-                for (final Form context : statements) {
-                    if (context.equals(consequent)) {
-                        break;
-                    }
-                    if (context.equals(conditionalStatement)) {
-
-//                                System.out.println("Statment " + Integer.toString(linesReaded) + " Modus Ponus "); ///////// /////////
 
 
-                        return conditionalStatement;
 
-                    }
-                }
-            }
-        }
-
-        return null;
-    }
-
-    public static Proof concat(Proof left, Proof right) {
-        if (!left.proving.equals(right.proving)) {
-            throw new IllegalArgumentException("provings mast be same to concat proofs");
-        }
-        Form proving = left.proving;
-        if (left.assumptions.size() != right.assumptions.size()) {
-            throw new IllegalArgumentException("different assumptions size");
-        }
-
-        int assumptionNumber = left.assumptions.size() - 1;
-        Form leftAssumption = left.assumptions.get(assumptionNumber);
-        Form rightAssumption = right.assumptions.get(assumptionNumber);
-        Form assumption;
-        if (leftAssumption instanceof UnaryNode
-                && ((UnaryNode) leftAssumption).operation.equals(UnaryOperation.NEGATION)
-                && ((UnaryNode) leftAssumption).argument.equals(rightAssumption)) {
-            assumption = rightAssumption;
-        } else if (rightAssumption instanceof UnaryNode
-                && ((UnaryNode) rightAssumption).operation.equals(UnaryOperation.NEGATION)
-                && ((UnaryNode) rightAssumption).argument.equals(leftAssumption)) {
-            assumption = leftAssumption;
-        } else {
-            throw new IllegalArgumentException("illegal last assumptions");
-        }
-
-        Deduction leftDeduction = new Deduction(left);
-        leftDeduction.apply();
-        left = leftDeduction.getProof();
-        Deduction rightDeduction = new Deduction(right);
-        rightDeduction.apply();
-        right = rightDeduction.getProof();
-        left.statements.addAll(right.statements);
-        left.statements.addAll(ProofBank.getProofByName("f|!f", assumption).statements);
-        Form mpStatement = FormHelper.insert(
-                AxiomsSystems.formsOfSystemsOfAxioms[7]
-                , assumption
-                , new UnaryNode(assumption, UnaryOperation.NEGATION)
-                , proving
-        );
-        left.statements.add(mpStatement);
-        for (int i = 0; i < 3; i++) {
-            mpStatement = ((BinaryNode) mpStatement).rightArgument;
-            left.statements.add(mpStatement);
-
-        }
-        left.proving = proving;
-        left.removeCopies();
-
-
-        return left;
-
-    }
-
-    static class ModusPonensPair {
-
-        public final int conditionalStatement;
-        public final int antecedent;
-
-        ModusPonensPair(int conditionalStatement, int antecedent) {
-            this.conditionalStatement = conditionalStatement;
-            this.antecedent = antecedent;
-        }
-    }
 }
