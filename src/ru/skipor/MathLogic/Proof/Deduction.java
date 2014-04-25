@@ -39,14 +39,14 @@ public class Deduction {
             List<Form> futureStatements = new ArrayList<>();
             for (Form currentStatement : statements) {
                 if (assumptionSet.contains(currentStatement) || AxiomsSystems.isAxiom(currentStatement)) {
-                    futureStatements.addAll(ProofBank.getProofByName("B->A", currentStatement, alpha).statements);
+                    futureStatements.addAll(ProofBank.getProofByName("o->f", currentStatement, alpha).statements);
                 } else if (currentStatement.equals(alpha)) {
-                    futureStatements.addAll(ProofBank.getProofByName("A->A", alpha).statements);
+                    futureStatements.addAll(ProofBank.getProofByName("f->f", alpha).statements);
                 } else {
                     Form antecedent = modusPonensFounder.getModusPonensConditionalStatement(currentStatement);
                     if (antecedent != null) {
 
-                        futureStatements.addAll(ProofBank.getProofByName("A->C", alpha, antecedent, currentStatement).statements);
+                        futureStatements.addAll(ProofBank.getProofByName("f->p", alpha, antecedent, currentStatement).statements);
                     } else {
 //                        System.out.println(statements.indexOf(currentStatement));
 //                        for (Form st : futureStatements) {

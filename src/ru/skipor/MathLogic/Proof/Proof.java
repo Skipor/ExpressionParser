@@ -1,7 +1,6 @@
 package ru.skipor.MathLogic.Proof;
 
-import ru.skipor.MathLogic.Form.Form;
-import ru.skipor.MathLogic.Form.BinaryNode;
+import ru.skipor.MathLogic.Form.*;
 import ru.skipor.MathLogic.Form.Parser.FormParser;
 
 import java.io.BufferedReader;
@@ -285,6 +284,60 @@ public class Proof {
             }
         }
         return builder.toString();
+
+    }
+
+
+    public static Proof concat(Proof left, Proof right) {
+        if (!left.proving.equals(right.proving)) {
+            throw new IllegalArgumentException("provings mast be same to concat proofs");
+        }
+        Form proving = left.proving;
+        if (left.assumptions.size() != right.assumptions.size()) {
+            throw new IllegalArgumentException("different assumptions size");
+        }
+
+        int assumptionNumber = left.assumptions.size() - 1;
+        Form leftAssumption = left.assumptions.get(assumptionNumber);
+        Form rightAssumption = right.assumptions.get(assumptionNumber);
+        Form assumption;
+        if (leftAssumption instanceof UnaryNode
+                && ((UnaryNode) leftAssumption).operation.equals(UnaryOperation.NEGATION)
+                && ((UnaryNode) leftAssumption).argument.equals(rightAssumption)) {
+            assumption = rightAssumption;
+        } else if (rightAssumption instanceof UnaryNode
+                && ((UnaryNode) rightAssumption).operation.equals(UnaryOperation.NEGATION)
+                && ((UnaryNode) rightAssumption).argument.equals(leftAssumption)) {
+            assumption = leftAssumption;
+        } else {
+            throw new IllegalArgumentException("illegal last assumptions");
+        }
+
+        Deduction leftDeduction = new Deduction(left);
+        leftDeduction.apply();
+        left = leftDeduction.getProof();
+        Deduction rightDeduction = new Deduction(right);
+        rightDeduction.apply();
+        right = rightDeduction.getProof();
+        left.statements.addAll(right.statements);
+        left.statements.addAll(ProofBank.getProofByName("f|!f", assumption).statements);
+        Form mpStatement = FormHelper.insert(
+                AxiomsSystems.formsOfSystemsOfAxioms[7]
+                , assumption
+                , new UnaryNode(assumption, UnaryOperation.NEGATION)
+                , proving
+        );
+        left.statements.add(mpStatement);
+        for (int i = 0; i < 3; i++) {
+            mpStatement = ((BinaryNode) mpStatement).rightArgument;
+            left.statements.add(mpStatement);
+
+        }
+        left.proving = proving;
+        left.removeCopies();
+
+
+        return left;
 
     }
 

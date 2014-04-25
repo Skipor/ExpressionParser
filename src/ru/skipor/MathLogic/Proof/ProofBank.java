@@ -21,13 +21,13 @@ public class ProofBank {
     private static final String NAMED_PROOFS_FILE_NAME = "resourceProofs/namedProofs.txt";
 
     static {
-        InputStream inputStream = null;
-        try {
-            inputStream = new FileInputStream(NAMED_PROOFS_FILE_NAME);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-//        InputStream inputStream = ProofGenerator.class.getClassLoader().getResourceAsStream(NAMED_PROOFS_FILE_NAME);
+//        InputStream inputStream = null;
+//        try {
+//            inputStream = new FileInputStream(NAMED_PROOFS_FILE_NAME);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+        InputStream inputStream = ProofGenerator.class.getClassLoader().getResourceAsStream(NAMED_PROOFS_FILE_NAME);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             List<Form> statements = new ArrayList<>();
             String lastStatement = "";

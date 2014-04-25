@@ -2,6 +2,8 @@ package ru.skipor.MathLogic.Form.Parser;
 
 import ru.skipor.MathLogic.Form.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,7 +23,7 @@ public class FormParser { // tail recursive parser
     static {
 
         String variableRegex = "[A-z]",
-                operationRegex = "[|&!()] | ->",
+                operationRegex = "[|&!(),] | ->",
                 tokenRegex = "(?x)(" + operationRegex + "|" + variableRegex + " | .??$)";
         //.??$ empty string, if it is end of expression. "" and ')' are exit tokens
         formPattern = Pattern.compile(tokenRegex);
@@ -45,7 +47,7 @@ public class FormParser { // tail recursive parser
 
     public static Form parse(String expression) throws ParserException {
         FormParser parser = new FormParser(expression);
-        Form result = parser.entailmentParse();
+        Form result = parser.formParse();
         if (!parser.currentToken.equals("")) {
             if (parser.currentToken.equals(")")) {
                 throw new IllegalExpressionFormatException("Unexpected ')' founded in \"" + expression + "\""
@@ -74,11 +76,27 @@ public class FormParser { // tail recursive parser
     }
 
 
-    private Form entailmentParse() throws ParserException {
+    public static List<Form> parseForms(String expressions) throws ParserException {
+        FormParser parser = new FormParser(expressions);
+        List<Form> results = new ArrayList<>();
+
+        do {
+            results.add(parser.formParse());
+//            if (!(parser.currentToken.equals(CORRECT_EXIT_TOKEN) || parser.currentToken.equals(","))) {
+//                throw new UnexpectedTokenFoundedException(parser);
+//            }
+
+
+        } while (!parser.currentToken.equals("") && !parser.currentToken.equals(" "));
+        return results;
+
+
+    }
+    private Form formParse() throws ParserException {
 
         Form result = disjunctionParse();
         if (currentToken.equals("->")) {
-            result = new BinaryNode(result, entailmentParse(), ENTAILMENT);
+            result = new BinaryNode(result, formParse(), ENTAILMENT);
         }
 
         return result;
@@ -119,7 +137,7 @@ public class FormParser { // tail recursive parser
             result = variableSet.getVariable(currentToken);
             nextToken();
         } else if (currentToken.equals("(")) {
-            result = entailmentParse();
+            result = formParse();
             if (!currentToken.equals(")")) {
                 if (currentToken.equals("")) {
                     throw new IllegalExpressionFormatException("Matching bracket is not founded in \"" + expression + "\""

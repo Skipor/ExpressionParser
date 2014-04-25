@@ -18,13 +18,15 @@ public class MainTest {
 
     public static void main(String[] args) throws Exception {
 
-        final Form form = FormParser.parse("A&!A->(B|C)&!A");
+
+            final Form form = FormParser.parse("A&!A->(B|C)&!A->(A->A)->(D->D)");
 //        final Form form = FormParser.parse("!!A->A");
-        Proof proof = ProofGenerator.generate(form);
-        assert (proof.check() == 0);
-        try (FileWriter fileWriter = new FileWriter("resourceProofs/work.out")) {
-            fileWriter.write(proof.toString(true));
-        }
+            Proof proof = ProofGenerator.generate(form);
+            assert (proof.check() == 0);
+            try (FileWriter fileWriter = new FileWriter("resourceProofs/work.out")) {
+                fileWriter.write(proof.toString(true));
+            }
+
 
 
 ////        final Form form = FormParser.parse("(!B->!A)->(A->B)");

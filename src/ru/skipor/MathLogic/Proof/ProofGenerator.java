@@ -74,8 +74,8 @@ public class ProofGenerator {
         }
         try {
             final String fileName = "resourceProofs/CustomNamedProofs.txt";
-            InputStream inputStream = new FileInputStream(fileName);
-//            InputStream inputStream = ProofGenerator.class.getClassLoader().getResourceAsStream(fileName);
+//            InputStream inputStream = new FileInputStream(fileName);
+            InputStream inputStream = ProofGenerator.class.getClassLoader().getResourceAsStream(fileName);
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))
             ) {
                 String currentLine;
