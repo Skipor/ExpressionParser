@@ -195,6 +195,8 @@ public class FormParser { // tail recursive parser
         }
 
         Term left = termParse();
+        System.out.println(left);
+        System.out.println(currentToken);
         if (currentToken.equals("=")) {
 
             nextToken();
@@ -229,8 +231,11 @@ public class FormParser { // tail recursive parser
         if (currentToken.equals("(")) {
             nextToken();
             result = termParse();
+            System.out.println(result);
+            System.out.println(currentToken);
             if (currentToken.equals(")")) {
                 nextToken();
+                System.out.println(currentToken);
             } else {
                 throw new MatchingBracketIsNotFoundedException(this);
             }

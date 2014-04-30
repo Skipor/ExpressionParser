@@ -20,7 +20,9 @@ public class MainTest {
     public static void main(String[] args) throws Exception {
 
 //        System.out.println(AxiomsSystems.isAxiom(Form.create("B->?x(B)")));
-        final Form form = FormParser.parse("@c?x(a=((b'+b')+(c*c)))&@c(b=c)->@c((a=j)|?c(a*b+c*c''''' = c(a, b,c))) -> A ->@d(B(a,b,g9(d,d,s)))");
+//        final Form form = FormParser.parse("@a(a=x->a'=x')->((x+0)=x->(x+0)'=x')");
+        final Form form = FormParser.parse("((x+0)=x)");
+//        final Form form = FormParser.parse("(x+0)");
 //        Term term = FormParser.parseTerm("c(a, b,c)");
         System.out.println(form.getFreeVariables());
 //        System.out.println(term);
