@@ -61,6 +61,10 @@ public abstract class Form {
         if (substitutions != null) {
             if (substitutions.getVariableSubsitutions().size() == 1 && substitutions.getPredicateSubstitutions().isEmpty()) {
                 return substitutions.getVariableSubsitutions().get(variable);
+            } else {
+                if (substitutions.getPredicateSubstitutions().isEmpty() && substitutions.getPredicateSubstitutions().isEmpty()) {
+                    return variable;
+                }
             }
 
         }

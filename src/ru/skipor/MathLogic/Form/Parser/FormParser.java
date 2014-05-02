@@ -9,7 +9,8 @@ import ru.skipor.MathLogic.Form.Predicate.BinaryPredicate;
 import ru.skipor.MathLogic.Form.Predicate.Predicate;
 import ru.skipor.MathLogic.Form.Term.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,11 +26,13 @@ public class FormParser { // tail recursive parser
 
 
     public static final String CORRECT_EXIT_TOKEN = "";
+    public static final String ERROR_TOKEN = "error";
+    private Term savedTerm = null;
 
     static {
 
         String variableRegex = "[a-z][0-9]*", constantRegex = "0", predicateRegex = "[A-Z][0-9]*", operationRegex = "[|&!(),+=*'@?]|->", tokenRegex = "(?x)("
-                +  predicateRegex
+                + predicateRegex
 //                + "|" + functionRegex
                 + "|" + constantRegex
                 + "|" + operationRegex +
@@ -72,6 +75,7 @@ public class FormParser { // tail recursive parser
         }
         return result;
     }
+
     public static Term parseTerm(String expression) throws ParserException {
         FormParser parser = new FormParser(expression);
         parser.nextToken();
@@ -86,7 +90,6 @@ public class FormParser { // tail recursive parser
         }
         return result;
     }
-
 
 
     private FormParser(String expression) {
@@ -142,22 +145,26 @@ public class FormParser { // tail recursive parser
         Form result;
         if (currentToken.equals("(")) {
             result = formParse();
-            if (!currentToken.equals(")")) {
-                if (currentToken.equals(CORRECT_EXIT_TOKEN)) {
-                    throw new MatchingBracketIsNotFoundedException(this);
+            if (result == null) { // there is term in brackets, not form
+                result = predicateParse();
+            } else {
+                if (!currentToken.equals(")")) {
+                    if (currentToken.equals(CORRECT_EXIT_TOKEN)) {
+                        throw new MatchingBracketIsNotFoundedException(this);
 
-                } else {
-                    throw new UnexpectedTokenFoundedException(this);
+                    } else {
+                        throw new UnexpectedTokenFoundedException(this);
+                    }
                 }
+                nextToken();
             }
-            nextToken();
         } else if (currentToken.equals("!")) {
             result = new UnaryNode(unaryParse(), NEGATION);
         } else if (currentToken.equals(QuantifierOperation.EXISTENTIAL.token)
                 || currentToken.equals(QuantifierOperation.UNIVERSAL.token)) {
             QuantifierOperation operation = currentToken.equals(QuantifierOperation.EXISTENTIAL.token)
-                        ? QuantifierOperation.EXISTENTIAL
-                        : QuantifierOperation.UNIVERSAL;
+                    ? QuantifierOperation.EXISTENTIAL
+                    : QuantifierOperation.UNIVERSAL;
             nextToken();
             if (tokenIsVariable()) {
 
@@ -195,12 +202,19 @@ public class FormParser { // tail recursive parser
         }
 
         Term left = termParse();
-        System.out.println(left);
-        System.out.println(currentToken);
+//        System.out.println(left);
+//        System.out.println(currentToken);
         if (currentToken.equals("=")) {
 
             nextToken();
             return new BinaryPredicate("=", left, termParse());
+
+        } else if (currentToken.equals(")")) {
+
+            savedTerm = left;
+            currentToken = ERROR_TOKEN;
+            return null;
+
 
         } else {
             throw new UnexpectedTokenFoundedException(this);
@@ -217,7 +231,7 @@ public class FormParser { // tail recursive parser
         return leftArgument;
     }
 
-    private Term summandParse() throws ParserException{
+    private Term summandParse() throws ParserException {
         Term leftArgument = factorParse();
         while (currentToken.equals("*")) {
             nextToken();
@@ -226,16 +240,16 @@ public class FormParser { // tail recursive parser
         return leftArgument;
     }
 
-    private Term factorParse() throws ParserException{
+    private Term factorParse() throws ParserException {
         Term result;
         if (currentToken.equals("(")) {
             nextToken();
             result = termParse();
-            System.out.println(result);
-            System.out.println(currentToken);
+//            System.out.println(result);
+//            System.out.println(currentToken);
             if (currentToken.equals(")")) {
                 nextToken();
-                System.out.println(currentToken);
+//                System.out.println(currentToken);
             } else {
                 throw new MatchingBracketIsNotFoundedException(this);
             }
@@ -244,12 +258,12 @@ public class FormParser { // tail recursive parser
             nextToken();
             if (currentToken.equals("(")) {
                 List<Term> terms = new ArrayList<>();
-                    do {
-                        nextToken();
-                    if(currentToken.equals(")")) break; // if no arguments
-                        terms.add(termParse());
-                    } while (currentToken.equals(","));
+                do {
                     nextToken();
+                    if (currentToken.equals(")")) break; // if no arguments
+                    terms.add(termParse());
+                } while (currentToken.equals(","));
+                nextToken();
                 result = new Function(name, terms);
 
             } else {
@@ -258,7 +272,15 @@ public class FormParser { // tail recursive parser
         } else if (currentToken.equals("0")) {
             result = Constant.ZERO;
             nextToken();
+        } else if (currentToken.equals(ERROR_TOKEN)) {
+            result = savedTerm;
+
+            savedTerm = null;
+            nextToken();
+
+
         } else {
+
             throw new UnexpectedTokenFoundedException(this);
         }
 

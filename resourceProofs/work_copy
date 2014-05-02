@@ -1,0 +1,17 @@
+C -> A-> B, i = c|- C&A->B
+C->A->B
+C&A -> C
+(C ->A->B) -> C&A -> (C ->A->B)
+C&A -> (C ->A->B)
+(C&A -> C) -> (C&A -> (C ->A->B)) -> (C&A -> A -> B)
+(C&A -> (C ->A->B)) -> (C&A -> A -> B)
+(C&A -> A -> B)
+C&A->A
+(C&A->A) -> (C&A -> A -> B) -> (C&A->B)
+(C&A -> A -> B) -> (C&A->B)
+(@x(C&A -> A -> B)) -> (C&A->B)
+(C&A -> A -> B) -> ?x(C&A->B)
+i = c
+a = b -> a = c -> b = c
+a = b -> @c(a = c -> b = c)
+(C&A->B)

@@ -67,5 +67,12 @@ public class Substitutions {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Substitutions{" +
+                "variableTermMap=" + variableTermMap +
+                ", predicateFormMap=" + predicateFormMap +
+                ", boundedVariables=" + boundedVariables +
+                '}';
+    }
 }
