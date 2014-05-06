@@ -97,7 +97,7 @@ public class AxiomsSystems {
                 errorMessage = null;
                 return false;
             }
-            if(!noSub.containsVariableAsFree(variable)){
+            if(!noSub.containsVariableAsFree(variable) && noSub.equals(withSub)){
                 return true;
             }
             Term sub = noSub.getOnlySubstitution(withSub, variable);
