@@ -1,17 +1,8 @@
 package ru.skipor.MathLogic.Tasks;
 
 import ru.skipor.MathLogic.Form.Form;
-import ru.skipor.MathLogic.Form.Logical.BinaryNode;
-import ru.skipor.MathLogic.Form.Logical.QuantifierNode;
-import ru.skipor.MathLogic.Form.Logical.QuantifierOperation;
 import ru.skipor.MathLogic.Form.Parser.FormParser;
-import ru.skipor.MathLogic.Form.Predicate.Predicate;
-import ru.skipor.MathLogic.Form.Substitutions;
-import ru.skipor.MathLogic.Form.Term.Term;
-import ru.skipor.MathLogic.Form.Term.Variable;
 import ru.skipor.MathLogic.Proof.AxiomsSystems;
-
-import java.util.Arrays;
 
 /**
  * User: Vladimir Skipor
@@ -25,41 +16,42 @@ public class MainTest {
     public static void main(String[] args) throws Exception {
 
 //        System.out.println(AxiomsSystems.isAxiom(Form.create("B->?x(B)")));
-        final Form form = FormParser.parse("@t(P(z))->?x@tP(f(y,a))");
-        Form statement = form;
-        final Form la = ((BinaryNode) statement).leftArgument;
-        final Form ra = ((BinaryNode) statement).rightArgument;
-        Form noSub, withSub;
-        Variable variable;
-        boolean flag;
-        if (la instanceof QuantifierNode && ((QuantifierNode) la).operation.equals(QuantifierOperation.UNIVERSAL)) {
-            variable = ((QuantifierNode) la).boundingVariable;
-            noSub = ((QuantifierNode) la).argument;
-            withSub = ra;
-        } else if (ra instanceof QuantifierNode && ((QuantifierNode) ra).operation.equals(QuantifierOperation.EXISTENTIAL)) {
-            variable = ((QuantifierNode) ra).boundingVariable;
-            noSub = ((QuantifierNode) ra).argument;
-            withSub = la;
-        } else {
-            flag = false;
-            System.out.println("erororo");
-
-            return;
-        }
-        if(!noSub.containsVariableAsFree(variable)){
-            flag = true;
-        }
-        Term sub = noSub.getOnlySubstitution(withSub, variable);
-        System.out.println(sub); // todo remove
-//        final Form form = FormParser.parse("@xP(x)->P(x)");
-//        final Form form = FormParser.parse("(x+0)");
-//        Term term = FormParser.parseTerm("c(a, b,c)");
-        System.out.println(form);
+        final Form form = FormParser.parse("@t(P(z))->?x@tP(x)");
         System.out.println(AxiomsSystems.isAxiom(form));
-        System.out.println(form.getOnlySubstitution(form, new Variable("x")));
-        Form p1 = new Predicate("P", Arrays.asList((Term) new Variable("x")));
-        System.out.println(p1.equalsButSubstitutions(p1, new Substitutions()));
-        System.out.println(new Variable("x").equalsButSubstitutions(new Variable("x"), new Substitutions()));
+//        Form statement = form;
+//        final Form la = ((BinaryNode) statement).leftArgument;
+//        final Form ra = ((BinaryNode) statement).rightArgument;
+//        Form noSub, withSub;
+//        Variable variable;
+//        boolean flag;
+//        if (la instanceof QuantifierNode && ((QuantifierNode) la).operation.equals(QuantifierOperation.UNIVERSAL)) {
+//            variable = ((QuantifierNode) la).boundingVariable;
+//            noSub = ((QuantifierNode) la).argument;
+//            withSub = ra;
+//        } else if (ra instanceof QuantifierNode && ((QuantifierNode) ra).operation.equals(QuantifierOperation.EXISTENTIAL)) {
+//            variable = ((QuantifierNode) ra).boundingVariable;
+//            noSub = ((QuantifierNode) ra).argument;
+//            withSub = la;
+//        } else {
+//            flag = false;
+//            System.out.println("erororo");
+//
+//            return;
+//        }
+//        if(!noSub.containsVariableAsFree(variable)){
+//            flag = true;
+//        }
+//        Term sub = noSub.getOnlySubstitution(withSub, variable);
+//        System.out.println(sub); // todo remove
+////        final Form form = FormParser.parse("@xP(x)->P(x)");
+////        final Form form = FormParser.parse("(x+0)");
+////        Term term = FormParser.parseTerm("c(a, b,c)");
+//        System.out.println(form);
+//        System.out.println(AxiomsSystems.isAxiom(form));
+//        System.out.println(form.getOnlySubstitution(form, new Variable("x")));
+//        Form p1 = new Predicate("P", Arrays.asList((Term) new Variable("x")));
+//        System.out.println(p1.equalsButSubstitutions(p1, new Substitutions()));
+//        System.out.println(new Variable("x").equalsButSubstitutions(new Variable("x"), new Substitutions()));
 //        System.out.println(term);
 //        System.out.println(term.getVariables());
 //        System.out.println(new Variable("a").containsVariable(new Variable("b")));

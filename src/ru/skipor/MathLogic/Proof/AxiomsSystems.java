@@ -85,41 +85,55 @@ public class AxiomsSystems {
             final Form ra = ((BinaryNode) statement).rightArgument;
             Form noSub, withSub;
             Variable variable;
+            boolean result = false;
             if (la instanceof QuantifierNode && ((QuantifierNode) la).operation.equals(QuantifierOperation.UNIVERSAL)) {
                 variable = ((QuantifierNode) la).boundingVariable;
                 noSub = ((QuantifierNode) la).argument;
                 withSub = ra;
-            } else if (ra instanceof QuantifierNode && ((QuantifierNode) ra).operation.equals(QuantifierOperation.EXISTENTIAL)) {
+                result |= check11and12(noSub, withSub, variable);
+            }
+            if (ra instanceof QuantifierNode && ((QuantifierNode) ra).operation.equals(QuantifierOperation.EXISTENTIAL)) {
                 variable = ((QuantifierNode) ra).boundingVariable;
                 noSub = ((QuantifierNode) ra).argument;
                 withSub = la;
-            } else {
+                result |= check11and12(noSub, withSub, variable);
+            }
+            if (!result) {
                 errorMessage = null;
                 return false;
-            }
-            if(!noSub.containsVariableAsFree(variable) && noSub.equals(withSub)){
+            } else {
                 return true;
             }
-            Term sub = noSub.getOnlySubstitution(withSub, variable);
-//            System.out.println(sub); // todo remove
 
-            if (sub != null) {
-                if(noSub.isFreeToSubstituteFor(sub, variable)) {
-                    return true;
-                } else {
-                    errorMessage = "терм " + sub.toString() + " не свободен для подстановки в формулу " + noSub.toString() + " вместо переменной " + variable.toString() +".";
-                    return false;
-                }
-            } else {
-                errorMessage = null;
-                return false;
-            }
 
         }
         errorMessage = null;
         return false;
 
 
+    }
+
+    public static boolean check11and12(Form noSub, Form withSub, Variable variable) {
+        if(!noSub.containsVariableAsFree(variable) && noSub.equals(withSub)){
+            return true;
+        }
+        Term sub = noSub.getOnlySubstitution(withSub, variable);
+//        System.out.println("No sub " + noSub);
+//        System.out.println("With sub " + withSub);
+//
+//        System.out.println("Sub " + sub); // todo remove
+
+        if (sub != null) {
+            if(noSub.isFreeToSubstituteFor(sub, variable)) {
+                return true;
+            } else {
+                errorMessage = "терм " + sub.toString() + " не свободен для подстановки в формулу " + noSub.toString() + " вместо переменной " + variable.toString() +".";
+                return false;
+            }
+        } else {
+//            errorMessage = null;
+            return false;
+        }
     }
 
     private static boolean isInductionAxiom(Form statement) {
