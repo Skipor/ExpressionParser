@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10cc1bba-9c36-45ca-a5ed-226d9f4da8a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testProofs/a.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/AxiomsSystems.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/AxiomsSystems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTest.java" afterPath="$PROJECT_DIR$/src/ru/skipor/MathLogic/Tasks/MainTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExpressionParser.iws" />
@@ -90,30 +87,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AxiomsSystems.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AxiomsSystems.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/AxiomsSystems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6284153" vertical-offset="1005" max-vertical-offset="2460">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="2460">
               <caret line="104" column="51" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Function.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Term/Function.java">
+      <file leaf-file-name="test5.in.out" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testProofs/test5.in.out">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1545">
-              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="incorrect5.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testProofs/incorrect5.txt">
+      <file leaf-file-name="test5.in" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testProofs/test5.in">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="562">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -755,7 +752,7 @@
     <configuration default="false" name="Task5" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ru.skipor.MathLogic.Tasks.MainTask5" />
       <option name="VM_PARAMETERS" value="-ea -Xms2000m -Xmx2000m" />
-      <option name="PROGRAM_PARAMETERS" value="testProofs/a.txt" />
+      <option name="PROGRAM_PARAMETERS" value="testProofs/test5.in" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -906,7 +903,11 @@
       <created>1399037884680</created>
       <updated>1399037884680</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Source is updated">
+      <created>1399390700047</created>
+      <updated>1399390700047</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -948,7 +949,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23032904" sideWeight="0.6708229" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2614458" sideWeight="0.60586554" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2614458" sideWeight="0.60586554" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="99" y="100" width="1240" height="700" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1020,7 +1021,8 @@
     <MESSAGE value="Tasks 4, 5 implemented" />
     <MESSAGE value="Bugs in task 5 parser and bug with axioms without substitution  are fixed" />
     <MESSAGE value="Jar is updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jar is updated" />
+    <MESSAGE value="Source is updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Source is updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1032,20 +1034,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Term/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/ru/skipor/MathLogic/Proof/ProofGeneratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <caret line="13" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Form/Logical/UnaryOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10033445" vertical-offset="0" max-vertical-offset="598">
@@ -1408,8 +1396,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/skipor/MathLogic/Proof/AxiomsSystems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6284153" vertical-offset="1005" max-vertical-offset="2460">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="2460">
           <caret line="104" column="51" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProofs/test5.in.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="562">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProofs/test5.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="562">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
